@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo de Tags HTML</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Guia Completo de Tags HTML</h1>
+    <p>Aprendendo todas as tags, sem exceção.</p>
+
+    <form action="https://www.google.com/search" method="get" target="_blank" class="search-form">
+        <label for="search-box" class="sr-only">Pesquisar Tags</label>
+        <input type="search" id="search-box" name="q" placeholder="Pesquisar qualquer tag..." required>
+        <input type="hidden" name="as_q" value="HTML tag OR semantica OR atributo" />
+        <button type="submit">🔍 Buscar</button>
+    </form>
+    <button id="darkModeToggle">Mudar Tema</button>
+
+</header>
+
+<nav>
+    <ul>
+        <li><a href="css.html">➡️ Ir para o Guia CSS</a></li> 
+        <li class="separator">|</li>
+        
+        <li><a href="#estrutura">Estrutura</a></li>
+        <li><a href="#texto">Texto</a></li>
+        <li><a href="#listas">Listas</a></li>
+        <li><a href="#links-media">Links e Mídia</a></li>
+        <li><a href="#formularios">Formulários</a></li>
+        <li><a href="#tabelas">Tabelas</a></li>
+        <li><a href="#semanticas">Semântica</a></li>
+        <li><a href="#outras">Outras Tags</a></li>
+        <li><a href="#obsoletas">❌ Obsoletas</a></li>
+    </ul>
+</nav>
+
+    <main>
+        <section id="inicio">
+            <h2>Bem-vindo!</h2>
+            <p>Este site é um guia para ensinar <strong>todas</strong> as tags HTML existentes.</p>
+            <p>Use o menu acima para navegar pelas categorias e descobrir para que serve cada tag, com exemplos claros.</p>
+        </section>
+
+<section id="estrutura">
+    <h2>Tags de Estrutura Básica</h2>
+    <p>Estas são as tags que formam o esqueleto de todo e qualquer documento HTML. Elas não aparecem visualmente na página (exceto pelo <code>&lt;title&gt;</code>), mas dizem ao navegador "o que é o quê".</p>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;html&gt;</code> - A Raiz do Documento</h3>
+        <p>Esta é a tag "mãe" de todas as outras. Ela envolve todo o conteúdo da sua página. Ela informa ao navegador que este é um documento HTML.</p>
+        <p><strong>Atributo principal:</strong> <code>lang</code>, usado para definir o idioma principal da página (ex: <code>lang="pt-br"</code> para português brasileiro), o que é vital para acessibilidade e SEO.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;head&gt;</code> - A "Cabeça" (Metadados)</h3>
+        <p>A seção <code>&lt;head&gt;</code> (cabeça) contém informações *sobre* a sua página. São dados que o navegador usa, mas que não são exibidos diretamente no conteúdo principal.</p>
+        <p>Pense nela como a "capa" de um livro, contendo o título, o autor (metadados), e como as letras devem parecer (CSS), mas não a história em si.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;body&gt;</code> - O "Corpo" (Conteúdo)</h3>
+        <p>Esta é a tag mais importante para o conteúdo. Tudo o que você quer que o usuário *veja* na página — textos, imagens, vídeos, botões — deve estar dentro da tag <code>&lt;body&gt;</code>.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;title&gt;</code> - O Título da Página</h3>
+        <p>Esta tag fica *dentro* do <code>&lt;head&gt;</code>. O texto que você coloca aqui é o que aparece na aba do navegador. É extremamente importante para SEO (para o Google saber sobre o que é sua página) e para os usuários encontrarem sua aba.</p>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;head&gt;
+    &lt;title&gt;Guia Completo de Tags HTML&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;meta&gt;</code> - Metadados</h3>
+        <p>Esta é uma tag "auto-fechável" (não possui <code>&lt;/meta&gt;</code>) que vive dentro do <code>&lt;head&gt;</code>. Ela fornece metadados (dados sobre dados) ao navegador.</p>
+        <h4>Exemplos Essenciais:</h4>
+        <pre><code>&lt;!-- Define o padrão de caracteres (essencial para acentos) --&gt;
+&lt;meta charset="UTF-8"&gt;
+
+&lt;!-- Define a "viewport", essencial para responsividade (celulares) --&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;!-- Define a descrição da página (usada pelo Google) --&gt;
+&lt;meta name="description" content="Aprenda todas as tags HTML aqui."&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;link&gt;</code> - Conectando Arquivos Externos</h3>
+        <p>Usada principalmente dentro do <code>&lt;head&gt;</code> para "puxar" arquivos externos para dentro do seu HTML. Seu uso mais comum é para carregar folhas de estilo (CSS).</p>
+        <h4>Exemplo de Uso (CSS):</h4>
+        <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;script&gt;</code> - Scripts (JavaScript)</h3>
+        <p>Esta tag é usada para incluir código JavaScript. Ela pode ser usada de duas formas:</p>
+        <ol>
+            <li><strong>Embutido (inline):</strong> Escrevendo o código dentro da tag (menos comum hoje em dia).</li>
+            <li><strong>Externo:</strong> Carregando um arquivo U_S_ (o mais recomendado).</li>
+        </ol>
+        <p>Geralmente é colocada no final do <code>&lt;body&gt;</code>, para garantir que a página carregue antes do script rodar.</p>
+        <h4>Exemplo de Uso (Externo):</h4>
+        <pre><code>&lt;script src="meu-arquivo.js"&gt;&lt;/script&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;style&gt;</code> - Estilos Embutidos</h3>
+        <p>Permite escrever código CSS diretamente dentro do <code>&lt;head&gt;</code> do HTML. É útil para testes rápidos, mas para projetos reais, é sempre melhor usar a tag <code>&lt;link&gt;</code> para carregar um arquivo <code>.css</code> separado.</p>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;head&gt;
+    &lt;style&gt;
+        body {
+            background-color: #f0f0f0;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+    </article>
+
+</section>
+
+<section id="texto">
+    <h2>Tags de Texto</h2>
+    <p>Estas tags são usadas para estruturar e dar significado ao conteúdo textual. Elas informam ao navegador e aos mecanismos de busca (como o Google) qual é a hierarquia e o propósito de cada parte do texto.</p>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> - Títulos (Headings)</h3>
+        <p>Essas tags definem títulos e subtítulos. <code>&lt;h1&gt;</code> é o título mais importante da página (geralmente o título principal) e a hierarquia desce até o <code>&lt;h6&gt;</code>, o menos importante.</p>
+        <p><strong>Regra de Ouro:</strong> Nunca pule níveis (ex: de um <code>&lt;h2&gt;</code> para um <code>&lt;h4&gt;</code>). Use-os em ordem para manter a estrutura lógica. Você deve ter apenas um <code>&lt;h1&gt;</code> por página.</p>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;h1&gt;Título Principal da Página&lt;/h1&gt;
+&lt;h2&gt;Assunto 1&lt;/h2&gt;
+&lt;p&gt;Texto sobre o assunto 1.&lt;/p&gt;
+&lt;h2&gt;Assunto 2&lt;/h2&gt;
+&lt;h3&gt;Sub-tópico do Assunto 2&lt;/h3&gt;
+&lt;p&gt;Texto sobre o sub-tópico.&lt;/p&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;p&gt;</code> - Parágrafo</h3>
+        <p>Esta é, talvez, a tag de texto mais usada. Ela envolve um bloco de texto, criando um parágrafo. O navegador automaticamente adiciona um espaço (margem) antes e depois de cada <code>&lt;p&gt;</code>.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;strong&gt;</code> vs. <code>&lt;b&gt;</code></h3>
+        <p>Ambas deixam o texto em <strong>negrito</strong>, mas têm significados diferentes:</p>
+        <ul>
+            <li><code>&lt;strong&gt;</code>: Indica que o texto tem "forte importância" ou seriedade. É semântico. Leitores de tela podem dar ênfase a esta palavra.</li>
+            <li><code>&lt;b&gt;</code> (Bold): É puramente visual. Apenas deixa o texto em negrito sem adicionar um significado extra. (Use <code>&lt;strong&gt;</code> na maioria das vezes).</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;em&gt;</code> vs. <code>&lt;i&gt;</code></h3>
+        <p>Ambas deixam o texto em <em>itálico</em>, mas também têm significados diferentes:</p>
+        <ul>
+            <li><code>&lt;em&gt;</code> (Emphasis): Indica "ênfase" no texto, como se você estivesse mudando o tom de voz. Ex: "Você *realmente* fez isso?".</li>
+            <li><code>&lt;i&gt;</code> (Italic): Usado para termos técnicos, nomes estrangeiros, ou pensamentos. Ex: O termo <i>Homo sapiens</i>.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;span&gt;</code> - O Contêiner Genérico</h3>
+        <p><code>&lt;span&gt;</code> é uma tag "neutra" usada *dentro* de uma linha de texto. Ela não faz nada visualmente sozinha, mas é extremamente útil para agrupar um pedaço de texto para aplicar um estilo (CSS) ou para ser pego por um script (JavaScript).</p>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;p&gt;Este parágrafo tem uma &lt;span style="color: red;"&gt;palavra vermelha&lt;/span&gt;.&lt;/p&gt;</code></pre>
+    </article>
+    
+    <article class="tag-explicacao">
+        <h3><code>&lt;br&gt;</code> - Quebra de Linha</h3>
+        <p>A tag <code>&lt;br&gt;</code> (Break) força uma quebra de linha *dentro* de um bloco de texto (como um <code>&lt;p&gt;</code>). É uma tag auto-fechável.</p>
+        <p><strong>Cuidado:</strong> Não use <code>&lt;br&gt;</code> para criar espaço entre parágrafos. Para isso, apenas crie dois <code>&lt;p&gt;</code>. Use <code>&lt;br&gt;</code> apenas para coisas como endereços ou poemas.</p>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;p&gt;Rua dos Exemplos, 123&lt;br&gt;
+Bairro HTML&lt;br&gt;
+São Paulo - SP&lt;/p&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;hr&gt;</code> - Linha Horizontal</h3>
+        <p>A tag <code>&lt;hr&gt;</code> (Horizontal Rule) cria uma linha horizontal na página. Ela é usada para indicar uma separação temática ou uma mudança de assunto dentro de uma seção.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;blockquote&gt;</code> e <code>&lt;q&gt;</code> - Citações</h3>
+        <ul>
+            <li><code>&lt;blockquote&gt;</code>: Usada para grandes blocos de citação, geralmente de outra fonte. O navegador costuma adicionar um recuo (indentação) nela. Pode ter um atributo <code>cite</code> com a URL da fonte.</li>
+            <li><code>&lt;q&gt;</code>: Usada para pequenas citações *dentro* de uma linha. O navegador (geralmente) adiciona aspas automaticamente.</li>
+        </ul>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;blockquote cite="http://fonte.com"&gt;
+    &lt;p&gt;Este é um bloco de citação longo.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Como ele disse, &lt;q&gt;foi um pequeno passo&lt;/q&gt;.&lt;/p&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Mais Tags de Formatação de Texto</h3>
+        <p>Existem muitas outras tags de texto, geralmente usadas para casos específicos:</p>
+        <ul>
+            <li><code>&lt;code&gt;</code>: Marca um trecho de código de computador (como esta que estamos usando).</li>
+            <li><code>&lt;pre&gt;</code>: (Pré-formatado) Preserva os espaços em branco e quebras de linha. Muito usado *em volta* da tag <code>&lt;code&gt;</code> para exibir blocos de código.</li>
+            <li><code>&lt;sub&gt;</code>: Texto <sub>subscrito</sub> (ex: H<sub>2</sub>O).</li>
+            <li><code>&lt;sup&gt;</code>: Texto <sup>sobrescrito</sup> (ex: 2<sup>10</sup>).</li>
+            <li><code>&lt;mark&gt;</code>: <mark>Marca</mark> um texto, como se fosse um marcador amarelo.</li>
+            <li><code>&lt;time&gt;</code>: Marca uma data ou hora de forma semântica. Ex: <code>&lt;time datetime="2025-12-25"&gt;Natal&lt;/time&gt;</code>.</li>
+            <li><code>&lt;u&gt;</code>: (Underline) Sublinhado. <strong>Evite usar</strong>, pois os usuários pensam que é um link.</li>
+            <li><code>&lt;s&gt;</code> ou <code>&lt;del&gt;</code>: <s>Texto riscado</s>, usado para indicar algo que não é mais relevante ou foi deletado.</li>
+        </ul>
+    </article>
+
+</section>
+
+<section id="listas">
+    <h2>Tags de Listas</h2>
+    <p>Listas são essenciais para agrupar e organizar itens relacionados. O HTML nos oferece três tipos principais de listas.</p>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;ul&gt;</code> - Lista Não Ordenada (Unordered List)</h3>
+        <p>Esta é a lista mais comum, usada quando a ordem dos itens <strong>não importa</strong>. O navegador, por padrão, exibe os itens com "bolinhas" (bullets).</p>
+        <p>É a tag "mãe" (o contêiner) da lista.</p>
+        <p><strong>Uso principal:</strong> Menus de navegação, listas de características, etc.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;ol&gt;</code> - Lista Ordenada (Ordered List)</h3>
+        <p>Usada quando a ordem dos itens <strong>importa</strong>. O navegador, por padrão, exibe os itens com números (1, 2, 3...).</p>
+        <p><strong>Uso principal:</strong> Receitas (passo a passo), rankings, instruções sequenciais.</p>
+        <h4>Atributos úteis:</h4>
+        <ul>
+            <li><code>type</code>: Permite mudar o marcador (<code>type="A"</code> para A, B, C; <code>type="i"</code> para i, ii, iii).</li>
+            <li><code>start</code>: Permite começar a contagem de um número diferente (ex: <code>start="5"</code>).</li>
+            <li><code>reversed</code>: Faz a contagem ser decrescente.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;li&gt;</code> - Item da Lista (List Item)</h3>
+        <p>Esta é a tag que define o item em si. Ela <strong>sempre</strong> deve estar dentro de uma tag <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>.</p>
+        <p>Você não pode ter um <code>&lt;li&gt;</code> solto; ele precisa de um "pai" (<code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>).</p>
+        <h4>Exemplo de Uso (Lista Não Ordenada - Menu):</h4>
+        <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#inicio"&gt;Início&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#texto"&gt;Texto&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#listas"&gt;Listas&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        <h4>Exemplo de Uso (Lista Ordenada - Receita):</h4>
+        <pre><code>&lt;ol&gt;
+    &lt;li&gt;Misture os ingredientes secos.&lt;/li&gt;
+    &lt;li&gt;Adicione os ovos e o leite.&lt;/li&gt;
+    &lt;li&gt;Asse por 30 minutos.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code> - Lista de Definição (Description List)</h3>
+        <p>Este é um tipo de lista menos comum, mas muito útil. Ela é usada para pares de "termo" e "descrição", como um glossário ou um dicionário.</p>
+        <ul>
+            <li><code>&lt;dl&gt;</code> (Description List): O contêiner da lista.</li>
+            <li><code>&lt;dt&gt;</code> (Description Term): O termo que você quer definir (ex: a palavra).</li>
+            <li><code>&lt;dd&gt;</code> (Description Definition): A definição daquele termo.</li>
+        </ul>
+        <h4>Exemplo de Uso (Glossário):</h4>
+        <pre><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language. A linguagem de marcação para criar páginas web.&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets. Usado para estilizar as páginas web.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+    </article>
+
+</section>
+
+<section id="links-media">
+    <h2>Tags de Links e Mídia</h2>
+    <p>Aqui aprendemos a conectar páginas (a essência da web) e a exibir conteúdo rico, como imagens, vídeos e áudio.</p>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;a&gt;</code> - A Tag de Âncora (Link)</h3>
+        <p>A tag <code>&lt;a&gt;</code> (âncora) é usada para criar hyperlinks, permitindo ao usuário navegar para outra página, um arquivo, ou até mesmo outra parte da mesma página.</p>
+        <p>O atributo mais importante é o <code>href</code> (hyperlink reference), que define o destino do link.</p>
+        
+        <h4>Exemplo de Link Externo:</h4>
+        <pre><code>&lt;a href="https://www.google.com"&gt;Visite o Google&lt;/a&gt;</code></pre>
+
+        <h4>Exemplo de Link Interno (para outra página do seu site):</h4>
+        <pre><code>&lt;a href="/sobre.html"&gt;Sobre Nós&lt;/a&gt;</code></pre>
+
+        <h4>Exemplo de Link de Âncora (para uma seção na mesma página):</h4>
+        <p>Isso é o que estamos usando no nosso menu! Ele aponta para o <code>id</code> de uma seção.</p>
+        <pre><code>&lt;a href="#texto"&gt;Ir para a seção de Texto&lt;/a&gt;</code></pre>
+
+        <h4>Atributos importantes:</h4>
+        <ul>
+            <li><code>href="..."</code>: O destino (URL).</li>
+            <li><code>target="_blank"</code>: Faz o link abrir em uma nova aba (essencial para links externos).</li>
+            <li><code>rel="noopener noreferrer"</code>: Usado junto com <code>target="_blank"</code> por razões de segurança.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;img&gt;</code> - Imagem</h3>
+        <p>A tag <code>&lt;img&gt;</code> (imagem) é usada para exibir uma imagem na página. É uma tag auto-fechável.</p>
+        <p>Ela requer dois atributos essenciais:</p>
+        <ol>
+            <li><code>src</code> (Source): O caminho (URL) para o arquivo de imagem.</li>
+            <li><code>alt</code> (Alternative Text): O texto alternativo. É <strong>crucial</strong> para acessibilidade (leitores de tela leem isso para usuários cegos) e para SEO.</li>
+        </ol>
+
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;img src="imagens/logo.png" alt="Logotipo do meu site"&gt;</code></pre>
+        <p>Você também pode definir o tamanho com os atributos <code>width</code> (largura) e <code>height</code> (altura), embora o CSS seja a forma preferida de fazer isso.</p>
+        <pre><code>&lt;img src="foto.jpg" alt="Um gato" width="300" height="200"&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;video&gt;</code> - Vídeo</h3>
+        <p>Esta tag permite embutir um player de vídeo diretamente na sua página, sem depender do YouTube.</p>
+        <ul>
+            <li><code>src</code>: O caminho para o arquivo de vídeo.</li>
+            <li><code>controls</code>: Atributo booleano (só de existir, funciona) que mostra os controles do player (play, pause, volume). Sem ele, o usuário não pode controlar o vídeo.</li>
+            <li><code>autoplay</code>: Toca o vídeo automaticamente (geralmente malvisto e bloqueado pelos navegadores se não estiver com <code>muted</code>).</li>
+            <li><code>muted</code>: Inicia o vídeo sem som.</li>
+            <li><code>loop</code>: Faz o vídeo recomeçar quando termina.</li>
+        </ul>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;video src="meu-video.mp4" controls width="640"&gt;
+    Desculpe, seu navegador não suporta vídeos.
+&lt;/video&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;audio&gt;</code> - Áudio</h3>
+        <p>Funciona de forma muito similar ao <code>&lt;video&gt;</code>, mas apenas para áudio (ex: podcasts, música).</p>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;audio src="minha-musica.mp3" controls&gt;
+    Desculpe, seu navegador não suporta áudio.
+&lt;/audio&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;picture&gt;</code>, <code>&lt;source&gt;</code> e <code>&lt;figure&gt;</code> - Mídia Avançada</h3>
+        <p>Estas tags oferecem mais controle:</p>
+        <ul>
+            <li><code>&lt;source&gt;</code>: Usada *dentro* de <code>&lt;video&gt;</code> ou <code>&lt;audio&gt;</code> para oferecer múltiplos formatos de arquivo (o navegador escolhe o que suporta). Também usada dentro de <code>&lt;picture&gt;</code>.</li>
+            <li><code>&lt;picture&gt;</code>: Permite carregar imagens diferentes dependendo do tamanho da tela (design responsivo) ou formato suportado (ex: carregar <code>.webp</code> se o navegador suportar, ou <code>.jpg</code> como fallback).</li>
+            <li><code>&lt;figure&gt;</code> e <code>&lt;figcaption&gt;</code>: Usadas para agrupar semanticamente uma imagem, vídeo ou gráfico com sua legenda.</li>
+        </ul>
+        
+        <h4>Exemplo de <code>&lt;figure&gt;</code>:</h4>
+        <pre><code>&lt;figure&gt;
+    &lt;img src="mapa.jpg" alt="Mapa da região"&gt;
+    &lt;figcaption&gt;Figura 1: Mapa da região metropolitana.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+        <h4>Exemplo de <code>&lt;picture&gt;</code> (Responsivo):</h4>
+        <pre><code>&lt;picture&gt;
+   &lt;!-- Carrega esta imagem se a tela for maior que 600px --&gt;
+   &lt;source media="(min-width: 600px)" srcset="imagem-grande.jpg"&gt;
+   
+   &lt;!-- A imagem padrão (fallback) --&gt;
+   &lt;img src="imagem-pequena.jpg" alt="Uma imagem responsiva"&gt;
+&lt;/picture&gt;</code></pre>
+    </article>
+
+</section>
+
+<section id="formularios">
+    <h2>Tags de Formulários (Input de Dados)</h2>
+    <p>Formulários são o mecanismo de entrada de dados da web. Eles são fundamentais para qualquer aplicação que precise de interação do usuário, como registro ou login.</p>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;form&gt;</code> - O Contêiner do Formulário</h3>
+        <p>A tag <code>&lt;form&gt;</code> é o contêiner principal que agrupa todos os campos (inputs) de um formulário. Sem ela, os campos existem, mas não podem ser enviados como um formulário.</p>
+        
+        <h4>Atributos Essenciais:</h4>
+        <ul>
+            <li><code>action</code>: Define para onde os dados serão enviados (geralmente um script ou URL no servidor).</li>
+            <li><code>method</code>: Define como os dados serão enviados. Os mais comuns são:
+                <ul>
+                    <li><code>method="GET"</code>: Envia dados na URL (bom para buscas).</li>
+                    <li><code>method="POST"</code>: Envia dados no corpo da requisição (necessário para senhas e dados grandes/sensíveis).</li>
+                </ul>
+            </li>
+        </ul>
+        <h4>Exemplo:</h4>
+        <pre><code>&lt;form action="/processar-login" method="post"&gt;
+    &lt;!-- Campos do formulário aqui --&gt;
+&lt;/form&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;input&gt;</code> - Campos de Entrada de Dados</h3>
+        <p>A tag <code>&lt;input&gt;</code> é a mais versátil e importante em formulários. Ela é auto-fechável e muda drasticamente sua função dependendo do atributo <code>type</code>.</p>
+        
+        <h4>Atributos Chave:</h4>
+        <ul>
+            <li><code>type</code>: Define o tipo de campo (texto, senha, e-mail, data, etc.).</li>
+            <li><code>name</code>: **Obrigatório!** É o nome que o servidor usará para identificar o dado enviado.</li>
+            <li><code>value</code>: O valor padrão do campo.</li>
+        </ul>
+
+        <h4>Tipos Comuns de Input:</h4>
+        <pre><code>&lt;!-- Texto simples --&gt;
+&lt;input type="text" name="nome_usuario" placeholder="Seu nome"&gt;
+
+&lt;!-- Oculta o texto digitado --&gt;
+&lt;input type="password" name="senha"&gt;
+
+&lt;!-- Validação automática de e-mail --&gt;
+&lt;input type="email" name="email_usuario"&gt;
+
+&lt;!-- Botão de seleção (seleção única) --&gt;
+&lt;input type="radio" name="opcao" value="sim"&gt; Sim
+&lt;input type="radio" name="opcao" value="nao"&gt; Não
+
+&lt;!-- Caixa de checagem (seleção múltipla) --&gt;
+&lt;input type="checkbox" name="habilidade" value="html"&gt; HTML
+
+&lt;!-- Botão para enviar o formulário (precisa estar dentro de &lt;form&gt;) --&gt;
+&lt;input type="submit" value="Enviar Dados"&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;label&gt;</code> - Rótulo/Descrição do Campo</h3>
+        <p>A tag <code>&lt;label&gt;</code> cria um rótulo para um campo de formulário. Ela é vital para a **acessibilidade**, pois permite que leitores de tela descrevam o campo, e também melhora a **usabilidade**, permitindo que o usuário clique no texto do rótulo para ativar o campo.</p>
+        <p>O atributo <code>for</code> do <code>&lt;label&gt;</code> deve corresponder ao atributo <code>id</code> do <code>&lt;input&gt;</code>.</p>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;label for="email_campo"&gt;Seu Email:&lt;/label&gt;
+&lt;input type="email" id="email_campo" name="email" required&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;textarea&gt;</code> - Área de Texto Múltiplas Linhas</h3>
+        <p>Usada para campos de texto longos, como comentários ou mensagens. Por ser um campo de múltiplas linhas, ela usa uma tag de fechamento (<code>&lt;/textarea&gt;</code>).</p>
+        <h4>Atributos Comuns:</h4>
+        <ul>
+            <li><code>rows</code>: Número de linhas visíveis.</li>
+            <li><code>cols</code>: Número de colunas visíveis.</li>
+        </ul>
+        <h4>Exemplo:</h4>
+        <pre><code>&lt;label for="comentario"&gt;Comentários:&lt;/label&gt;
+&lt;textarea id="comentario" name="comentario" rows="4" cols="50"&gt;&lt;/textarea&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;button&gt;</code> - Botão Clicável</h3>
+        <p>Embora você possa usar <code>&lt;input type="submit"&gt;</code>, a tag <code>&lt;button&gt;</code> é mais flexível, pois permite incluir HTML (como imagens ou ícones) dentro do botão.</p>
+        <p><strong>Atenção:</strong> Por padrão, <code>&lt;button&gt;</code> envia o formulário. Se você não quer que ele envie, use <code>&lt;button type="button"&gt;</code>.</p>
+        <h4>Exemplo:</h4>
+        <pre><code>&lt;button type="submit"&gt;
+    &lt;strong&gt;Enviar&lt;/strong&gt; Cadastro
+&lt;/button&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;select&gt;</code> e <code>&lt;option&gt;</code> - Listas de Seleção</h3>
+        <p>Usadas para criar caixas suspensas (dropdowns) onde o usuário pode selecionar uma ou mais opções.</p>
+        <ul>
+            <li><code>&lt;select&gt;</code>: O contêiner da lista suspensa.</li>
+            <li><code>&lt;option&gt;</code>: Cada item selecionável dentro da lista.</li>
+        </ul>
+        <h4>Exemplo:</h4>
+        <pre><code>&lt;select name="estado"&gt;
+    &lt;option value="sp"&gt;São Paulo&lt;/option&gt;
+    &lt;option value="rj" selected&gt;Rio de Janeiro&lt;/option&gt; &lt;!-- selected torna este o padrão --&gt;
+&lt;/select&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Tags de Agrupamento Semântico</h3>
+        <p>Usadas para tornar formulários grandes mais organizados e acessíveis:</p>
+        <ul>
+            <li><code>&lt;fieldset&gt;</code>: Agrupa logicamente um conjunto de campos (ex: "Informações Pessoais").</li>
+            <li><code>&lt;legend&gt;</code>: Fornece um título para o grupo de campos criado pelo <code>&lt;fieldset&gt;</code>.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Outras Tags de Formulário:</h3>
+        <ul>
+            <li><code>&lt;datalist&gt;</code>: Fornece sugestões predefinidas para um campo <code>&lt;input&gt;</code> (autocompletar).</li>
+            <li><code>&lt;output&gt;</code>: Exibe o resultado de um cálculo ou ação do usuário.</li>
+        </ul>
+    </article>
+</section>
+
+<section id="tabelas">
+    <h2>Tags de Tabelas</h2>
+    <p>As tags de tabelas são usadas para organizar dados em linhas e colunas. Elas são vitais para a acessibilidade, pois leitores de tela dependem de sua estrutura correta para entender o conteúdo.</p>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;table&gt;</code> - O Contêiner da Tabela</h3>
+        <p>Esta tag define o início e o fim de uma tabela inteira. Todas as outras tags de tabela devem estar contidas dentro dela.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;caption&gt;</code> - Título da Tabela</h3>
+        <p>Fornece um título ou breve descrição para a tabela. Esta tag deve ser o primeiro elemento dentro da tag <code>&lt;table&gt;</code>.</p>
+        <p><strong>Uso Semântico:</strong> Ajuda usuários a entenderem o propósito da tabela rapidamente.</p>
+        <h4>Exemplo:</h4>
+        <pre><code>&lt;table&gt;
+    &lt;caption&gt;Vendas por Região em 2024&lt;/caption&gt;
+    &lt;!-- Resto da tabela aqui --&gt;
+&lt;/table&gt;</code></pre>
+    </article>
+    
+    <article class="tag-explicacao">
+        <h3><code>&lt;tr&gt;</code> - Linha da Tabela (Table Row)</h3>
+        <p>A tag <code>&lt;tr&gt;</code> é usada para definir uma linha completa dentro da tabela. Uma tabela é essencialmente uma coleção de linhas.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;th&gt;</code> - Célula de Cabeçalho (Table Header)</h3>
+        <p>Usada para definir uma célula que serve como **cabeçalho** para uma coluna ou linha. O navegador aplica automaticamente o estilo negrito e centraliza o conteúdo. É crucial para a acessibilidade.</p>
+        <p><strong>Atributo:</strong> <code>scope</code>, define se o cabeçalho se aplica à <code>col</code> (coluna) ou <code>row</code> (linha).</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;td&gt;</code> - Célula de Dados (Table Data)</h3>
+        <p>Usada para definir uma célula que contém os **dados** reais. É o corpo da tabela, onde as informações são exibidas.</p>
+        
+        <h4>Exemplo Combinado (`tr`, `th`, `td`):</h4>
+        <pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th scope="col"&gt;Produto&lt;/th&gt;
+        &lt;th scope="col"&gt;Preço&lt;/th&gt;
+        &lt;th scope="col"&gt;Estoque&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Laranja&lt;/td&gt;
+        &lt;td&gt;R$ 5.00&lt;/td&gt;
+        &lt;td&gt;100 un.&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Tags Semânticas de Divisão da Tabela</h3>
+        <p>Para tabelas longas ou complexas, estas tags dividem a tabela em seções lógicas, melhorando a estrutura e a acessibilidade:</p>
+        <ul>
+            <li><code>&lt;thead&gt;</code>: Contém as linhas de cabeçalho (geralmente uma ou duas linhas com <code>&lt;th&gt;</code>).</li>
+            <li><code>&lt;tbody&gt;</code>: Contém as linhas de dados principais (o corpo da tabela).</li>
+            <li><code>&lt;tfoot&gt;</code>: Contém linhas de rodapé (ex: total de colunas, notas de rodapé).</li>
+        </ul>
+        <p>Usar estas tags permite que o navegador (e o CSS/JavaScript) fixe o cabeçalho ou o rodapé, mesmo que o corpo da tabela role.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;colgroup&gt;</code> e <code>&lt;col&gt;</code> - Estilizando Colunas</h3>
+        <p>Permitem aplicar estilos (via CSS) a colunas inteiras de forma eficiente. Não são frequentemente usadas, mas são úteis para colorir colunas alternadas, por exemplo.</p>
+        <h4>Exemplo de Uso Avançado:</h4>
+        <p><code>colspan</code>: Faz uma célula se estender por várias **colunas**.</p>
+        <p><code>rowspan</code>: Faz uma célula se estender por várias **linhas**.</p>
+        <pre><code>&lt;tr&gt;
+    &lt;th colspan="2"&gt;Informação Combinada&lt;/th&gt; &lt;!-- Ocupa 2 colunas --&gt;
+    &lt;td rowspan="2"&gt;Dado Vertical&lt;/td&gt; &lt;!-- Ocupa 2 linhas --&gt;
+&lt;/tr&gt;</code></pre>
+    </article>
+
+</section>
+
+<section id="semanticas">
+    <h2>Tags Semânticas de Layout (HTML5)</h2>
+    <p>Semântica significa "o significado" do código. Estas tags ajudam os navegadores e ferramentas (como leitores de tela e robôs do Google) a entenderem qual a função de cada parte da sua página, mesmo antes de ler o conteúdo.</p>
+    <p>O uso correto destas tags é a **melhor prática** para a construção de sites modernos.</p>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;header&gt;</code> - Cabeçalho da Seção ou Página</h3>
+        <p>Define o conteúdo introdutório ou um grupo de elementos de navegação. Geralmente fica no topo da página e contém o logotipo (<code>&lt;img&gt;</code>), o título principal (<code>&lt;h1&gt;</code>) e, frequentemente, a barra de navegação (<code>&lt;nav&gt;</code>).</p>
+        <p><strong>Atenção:</strong> Você pode usar um <code>&lt;header&gt;</code> dentro de cada <code>&lt;article&gt;</code> ou <code>&lt;section&gt;</code>, não apenas no topo da página.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;nav&gt;</code> - Navegação</h3>
+        <p>Usada para agrupar links de navegação principais, como o menu do seu site ou um índice de conteúdo. Se houver vários grupos de links, use <code>&lt;nav&gt;</code> apenas para os links mais importantes.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;main&gt;</code> - Conteúdo Principal</h3>
+        <p>Contém o conteúdo principal e único de um documento. Tudo o que não se repete em outras páginas (como cabeçalho, rodapé ou navegação lateral) deve estar aqui. <strong>Deve haver apenas uma tag <code>&lt;main&gt;</code> por página.</strong></p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;section&gt;</code> - Seção Genérica</h3>
+        <p>Usada para agrupar conteúdo tematicamente relacionado. Cada <code>&lt;section&gt;</code> deve ser identificada, geralmente por um título (<code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, etc.). Pense nela como a divisão de capítulos em um livro.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;article&gt;</code> - Conteúdo Independente</h3>
+        <p>Representa um item de conteúdo independente e auto-contido, que teoricamente poderia ser distribuído ou reutilizado em outro lugar. Exemplos típicos são: post de blog, artigo de notícia, comentário de usuário ou um card de produto.</p>
+        <p><strong>Diferença de <code>&lt;section&gt;</code>:</strong> Um <code>&lt;article&gt;</code> pode existir fora do contexto da página; uma <code>&lt;section&gt;</code> faz parte da estrutura maior da página.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;aside&gt;</code> - Conteúdo Relacionado/Lateral</h3>
+        <p>Define conteúdo que está relacionado à área circundante, mas que pode ser considerado separado. É comumente usado para barras laterais (sidebars), caixas de "leia também", publicidade ou notas de rodapé.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;footer&gt;</code> - Rodapé</h3>
+        <p>Define o rodapé de uma página ou de uma seção/artigo. Normalmente contém informações de autoria, links relacionados, informações de direitos autorais ou links para o topo da página.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;div&gt;</code> - A Divisão Genérica (Não-Semântica)</h3>
+        <p>É a tag mais genérica e não-semântica. Ela não tem significado intrínseco e deve ser usada apenas quando nenhuma das tags semânticas acima se aplica. É o contêiner padrão para fins de estilo (CSS) ou manipulação por JavaScript (JS).</p>
+        <h4>Exemplo de Uso em Layout Moderno:</h4>
+        <pre><code>&lt;header&gt;
+    &lt;h1&gt;Título do Site&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Notícias Recentes&lt;/h2&gt;
+        &lt;article&gt;...&lt;/article&gt; &lt;!-- Um post de notícia --&gt;
+    &lt;/section&gt;
+    &lt;aside&gt;
+        &lt;p&gt;Publicidade&lt;/p&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;...&lt;/footer&gt;</code></pre>
+    </article>
+
+</section>
+
+<section id="outras">
+    <h2>Outras Tags (Avançadas e de Nicho)</h2>
+    <p>Esta seção cobre as tags menos usadas no dia a dia, mas que são vitais para tarefas específicas, como embutir conteúdo de terceiros, criar gráficos ou adicionar interatividade.</p>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;iframe&gt;</code> - Conteúdo Embutido</h3>
+        <p>A tag <code>&lt;iframe&gt;</code> (Inline Frame) é usada para embutir outro documento HTML dentro do documento atual. É o que você usa para embutir vídeos do YouTube ou mapas do Google Maps.</p>
+        <h4>Atributos Chave:</h4>
+        <ul>
+            <li><code>src</code>: A URL da página que será embutida.</li>
+            <li><code>width</code> e <code>height</code>: Define o tamanho do "quadro".</li>
+            <li><code>title</code>: Importante para acessibilidade, descreve o conteúdo embutido.</li>
+        </ul>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>&lt;iframe src="https://www.wikipedia.org/" width="400" height="300" 
+    title="Página inicial da Wikipedia"&gt;&lt;/iframe&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;canvas&gt;</code> e <code>&lt;svg&gt;</code> - Gráficos</h3>
+        <p>Ambas são usadas para desenhar gráficos e imagens, mas de maneiras diferentes:</p>
+        <ul>
+            <li><code>&lt;canvas&gt;</code>: Cria uma área de desenho onde o conteúdo é gerado via **JavaScript**. É ideal para gráficos dinâmicos, jogos e animações complexas.</li>
+            <li><code>&lt;svg&gt;</code> (Scalable Vector Graphics): Permite desenhar gráficos **vetoriais** diretamente no HTML. É baseado em XML, e seu conteúdo é escalável (não perde qualidade ao ser ampliado). Ideal para ícones e logotipos.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3><code>&lt;details&gt;</code> e <code>&lt;summary&gt;</code> - Interatividade Simples</h3>
+        <p>Criam um widget de divulgação interativo. O conteúdo pode ser exibido ou ocultado (como um menu sanfona ou FAQ) sem a necessidade de JavaScript.</p>
+        <ul>
+            <li><code>&lt;details&gt;</code>: O contêiner de tudo.</li>
+            <li><code>&lt;summary&gt;</code>: O título visível que, ao ser clicado, alterna a visibilidade do resto do conteúdo.</li>
+        </ul>
+        <h4>Exemplo de Uso (FAQ):</h4>
+        <pre><code>&lt;details&gt;
+    &lt;summary&gt;Clique para ver a resposta&lt;/summary&gt;
+    &lt;p&gt;O conteúdo que estava oculto aparece aqui.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Tags de Progresso e Medição</h3>
+        <ul>
+            <li><code>&lt;progress&gt;</code>: Exibe o progresso de uma tarefa. Útil para barras de carregamento.
+                <pre><code>&lt;progress value="70" max="100"&gt;70% Completo&lt;/progress&gt;</code></pre>
+            </li>
+            <li><code>&lt;meter&gt;</code>: Exibe uma medida escalar dentro de um intervalo conhecido. Útil para mostrar o uso de disco ou a relevância de uma votação.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Tags de Cabeçalho Avançadas/Nicho</h3>
+        <p>Estas tags vão dentro do <code>&lt;head&gt;</code>:</p>
+        <ul>
+            <li><code>&lt;base&gt;</code>: Define uma URL base para todos os links relativos na página.</li>
+            <li><code>&lt;noscript&gt;</code>: Define um conteúdo alternativo que será exibido apenas se o navegador do usuário tiver o JavaScript desativado.</li>
+            <li><code>&lt;template&gt;</code>: Usada para armazenar conteúdo HTML que não será renderizado imediatamente, mas que pode ser clonado e injetado na página via JavaScript.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Atributos ARIA (Acessibilidade)</h3>
+        <p>Embora não sejam tags, os atributos **ARIA** (Accessible Rich Internet Applications) são cruciais para completar o guia. Eles adicionam significado semântico onde o HTML nativo não é suficiente (como em componentes criados com JavaScript).</p>
+        <p>Eles guiam tecnologias assistivas, como leitores de tela.</p>
+        <h4>Exemplos Comuns:</h4>
+        <pre><code>&lt;div role="button" aria-pressed="true"&gt;Botão Customizado&lt;/div&gt; 
+&lt;!-- Indica que esta DIV deve ser tratada como um botão --&gt;
+
+&lt;input aria-label="Seu nome completo"&gt;
+&lt;!-- Fornece um rótulo em situações onde o &lt;label&gt; não pode ser usado --&gt;</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Tags de Formatação Menos Comuns</h3>
+        <p>Para cumprir o objetivo de listar *todas* as tags, aqui estão algumas tags semânticas ou históricas menos utilizadas:</p>
+        <ul>
+            <li><code>&lt;abbr&gt;</code>: Define uma abreviação (ex: <code>&lt;abbr title="Cascading Style Sheets"&gt;CSS&lt;/abbr&gt;</code>).</li>
+            <li><code>&lt;address&gt;</code>: Usada para informações de contato do autor/dono do documento ou artigo.</li>
+            <li><code>&lt;cite&gt;</code>: Usada para o título de uma obra (livro, música, filme).</li>
+            <li><code>&lt;kbd&gt;</code>: Representa uma entrada de teclado (ex: Pressione <kbd>Ctrl</kbd> + <kbd>C</kbd>).</li>
+            <li><code>&lt;samp&gt;</code>: Representa a saída de um programa de computador.</li>
+            <li><code>&lt;var&gt;</code>: Representa uma variável em programação ou matemática.</li>
+        </ul>
+    </article>
+</section>
+
+<section id="obsoletas">
+    <h2>❌ Tags e Atributos Obsoletos (Não Use!)</h2>
+    <p>Um guia completo deve incluir aquelas tags que foram **descontinuadas** no HTML5. Elas são mantidas por navegadores por questões de retrocompatibilidade, mas devem ser **evitadas** em novos projetos. O motivo é quase sempre: **O CSS faz isso melhor!**</p>
+    
+    <article class="tag-explicacao">
+        <h3>Tags de Estilo (Substituídas por CSS)</h3>
+        <p>Essas tags foram removidas porque sua função é puramente visual. O estilo deve ser feito com CSS.</p>
+        <ul>
+            <li><code>&lt;font&gt;</code>: Usada para definir cor, tamanho e fonte. **Alternativa:** Propriedades CSS como <code>font-family</code>, <code>font-size</code>, <code>color</code>.</li>
+            <li><code>&lt;center&gt;</code>: Usada para centralizar conteúdo. **Alternativa:** Propriedades CSS como <code>text-align: center;</code> ou Flexbox/Grid.</li>
+            <li><code>&lt;strike&gt;</code>, <code>&lt;s&gt;</code> e <code>&lt;u&gt;</code> (Uso puramente visual): Para riscado ou sublinhado. **Alternativa:** Embora <code>&lt;s&gt;</code> e <code>&lt;u&gt;</code> tenham ganhado significados semânticos de nicho, use <code>&lt;del&gt;</code> ou a propriedade CSS <code>text-decoration</code>.</li>
+            <li><code>&lt;big&gt;</code> e <code>&lt;small&gt;</code> (para tamanho de fonte). **Alternativa:** Propriedade CSS <code>font-size</code>.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Tags Estruturais de Navegação (Substituídas)</h3>
+        <ul>
+            <li><code>&lt;acronym&gt;</code>: Usada para acrônimos. **Substituta:** Use <code>&lt;abbr&gt;</code> (abreviação).</li>
+            <li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code>: Usadas para criar divisões complexas no navegador. **Substituta:** Layouts com CSS (Flexbox/Grid) e <code>&lt;iframe&gt;</code> para embutir conteúdo.</li>
+            <li><code>&lt;dir&gt;</code>: Lista de diretórios. **Substituta:** Use <code>&lt;ul&gt;</code> (lista não ordenada).</li>
+        </ul>
+    </article>
+</section>
+</main>
+
+    <button id="btnTopo" onclick="scrollToTop()" title="Voltar ao Topo">
+        ⬆️ Topo da Página
+    </button>
+    
+
+    <footer>
+        <p>© 2025 - O Guia Definitivo</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

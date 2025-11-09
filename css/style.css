@@ -1,0 +1,354 @@
+/* Configurações Globais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* NOVO: Aumenta a fonte para melhor legibilidade */
+    font-size: 17px; 
+}
+
+html {
+    /* Permite a rolagem suave ao clicar nos links do menu */
+    scroll-behavior: smooth;
+}
+
+/* Header e Footer */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Navegação */
+nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+    position: sticky; /* Faz o menu "grudar" no topo */
+    top: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding-bottom: 60px; /* Espaço para o footer fixo */
+}
+
+main section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f4f4f4;
+}
+
+/* Estilo para destacar o nome das tags */
+code {
+    background-color: #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    color: #d63384; /* Um tom de rosa para destaque */
+}
+/* COLE ISTO NO FINAL DO SEU style.css 
+*/
+
+/* Estilos para as explicações das tags */
+.tag-explicacao {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.tag-explicacao h3 {
+    margin-top: 0;
+    color: #005a9c; /* Um azul escuro para o título da tag */
+}
+
+.tag-explicacao h3 code {
+    /* O 'code' dentro do h3 deve herdar a cor */
+    color: inherit; 
+    background-color: #e6f3ff;
+    padding: 3px 6px;
+}
+
+/* Estilos para blocos de exemplo de código */
+pre {
+    background-color: #2d2d2d; /* Fundo escuro para código */
+    color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Permite rolar o código se for muito largo */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9em;
+}
+
+/* Ajusta o 'code' dentro do 'pre' (se houver) */
+pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    font-weight: normal;
+}
+/* ESTILOS PARA O BOTÃO "VOLTAR AO TOPO" */
+#btnTopo {
+    display: none; /* Esconde o botão por padrão (será mostrado pelo JS) */
+    position: fixed; /* Fixa o botão na tela */
+    bottom: 80px; /* Acima do footer */
+    right: 30px; /* À direita */
+    z-index: 99; /* Garante que fique acima de outros elementos */
+    border: none;
+    outline: none;
+    background-color: #005a9c; /* Cor do botão */
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#btnTopo:hover {
+    background-color: #007bff;
+}
+/* ESTILOS PARA O FORMULÁRIO DE PESQUISA */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#search-box {
+    padding: 10px 15px;
+    border: 2px solid #555;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    width: 300px;
+    max-width: 80%;
+}
+
+.search-form button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Esconde o label visualmente, mas o mantém para acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+/* ==================================== */
+/* ESTILOS PARA O DARK MODE */
+/* ==================================== */
+
+/* Ajuste de Transição para Mudança Suave */
+body, header, nav, main, footer, .tag-explicacao, code, pre {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Estilo do Botão Dark Mode (Posicionamento e Aparência) */
+#darkModeToggle {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 1. MUDANÇA GLOBAL (BODY) */
+.dark-mode {
+    background-color: #121212; /* Fundo muito escuro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+/* 2. MUDANÇA DOS CONTÊINERES BRANCOS */
+.dark-mode header,
+.dark-mode footer {
+    background-color: #1f1f1f; /* Cor um pouco mais escura para contraste */
+}
+
+.dark-mode main {
+    background-color: #1f1f1f; /* Fundo principal escuro */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode nav {
+    background-color: #2b2b2b;
+}
+
+/* 3. MUDANÇA DE SEÇÕES DE CONTEÚDO (EXPLICAÇÕES) */
+.dark-mode .tag-explicacao {
+    background-color: #2b2b2b;
+    border-color: #3d3d3d;
+}
+
+.dark-mode .tag-explicacao h3 {
+    color: #66b3ff; /* Azul mais claro para títulos em Dark Mode */
+}
+
+/* 4. MUDANÇA DE CÓDIGO E BLOCOS PRE */
+.dark-mode code {
+    background-color: #444; /* Fundo de código escuro */
+    color: #ffd700; /* Amarelo ou dourado para destacar o código */
+}
+
+.dark-mode pre {
+    background-color: #000000; /* Fundo de código preto */
+    color: #f1f1f1;
+}
+
+.dark-mode pre code {
+    color: inherit;
+}
+/* Estilo para separar os menus nas diferentes páginas */
+nav ul li.separator {
+    color: #fff; /* Cor do separador */
+    pointer-events: none; /* Garante que ele não seja clicável */
+    padding: 0 5px;
+}
+
+.dark-mode nav ul li.separator {
+    color: #999; /* Cor mais suave no modo escuro */
+}
+/* REGRAS ESSENCIAIS PARA GARANTIR RESPONSIVIDADE */
+
+/* 1. Imagens não devem ultrapassar o contêiner */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 2. Tabelas devem ser roláveis em telas pequenas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    display: block; /* Permite a rolagem horizontal */
+    overflow-x: auto; /* Adiciona barra de rolagem horizontal se necessário */
+    white-space: nowrap; /* Mantém o conteúdo da tabela sem quebras desnecessárias */
+}
+/* ================================================= */
+/* MEDIA QUERY: AJUSTES FINOS PARA SMARTPHONES */
+/* ================================================= */
+
+@media screen and (max-width: 600px) {
+    /* AJUSTES GLOBAIS */
+    body {
+        font-size: 16px; /* Fonte ligeiramente menor */
+    }
+
+    /* OTIMIZAÇÃO DO CABEÇALHO E PESQUISA */
+    header h1 {
+        font-size: 1.8em; /* Título menor */
+        margin-top: 50px; /* Mais espaço abaixo do botão de tema */
+    }
+    
+    /* 1. NAVEGAÇÃO (Torna o menu vertical e rolável) */
+    nav ul {
+        flex-direction: column; /* Transforma a navegação em uma coluna */
+        height: 150px; /* Limita a altura */
+        overflow-y: scroll; /* Permite rolar a lista de links */
+        border-bottom: 5px solid #007bff;
+    }
+    
+    nav ul li {
+        margin: 5px 0; /* Mais espaçamento vertical */
+        text-align: center;
+        width: 100%;
+    }
+    
+    /* 2. FORMULÁRIO DE PESQUISA */
+    .search-form {
+        flex-direction: column; /* Coloca o input e o botão um em cima do outro */
+        align-items: center;
+        width: 100%;
+    }
+
+    #search-box {
+        width: 90%;
+        border-radius: 5px; /* Arredonda o input inteiro */
+        margin-bottom: 10px;
+    }
+    
+    .search-form button {
+        width: 90%;
+        border-radius: 5px; /* Arredonda o botão inteiro */
+    }
+
+    /* 3. BOTÕES FIXOS */
+    #darkModeToggle {
+        top: 10px;
+        right: 10px;
+    }
+
+    #btnTopo {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+}

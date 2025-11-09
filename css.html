@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia CSS Completo - Propriedades Essenciais</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* Apenas para garantir que o menu da página CSS funcione bem */
+        #css-intro {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guia Completo de Propriedades CSS</h1>
+        <p>Aprenda a estilizar sua página, do layout à tipografia.</p>
+
+        <form action="https://www.google.com/search" method="get" target="_blank" class="search-form">
+            <label for="search-box" class="sr-only">Pesquisar Propriedades CSS</label>
+            <input type="search" id="search-box" name="q" placeholder="Pesquisar qualquer propriedade CSS..." required>
+            <input type="hidden" name="as_q" value="CSS propriedade OR seletor OR flexbox" />
+            <button type="submit">🔍 Buscar</button>
+        </form>
+        
+        <button id="darkModeToggle">Mudar Tema</button>
+    </header>
+
+<nav>
+        <ul>
+            <li><a href="index.html">⬅️ Guia HTML</a></li>
+            <li class="separator">|</li>
+            
+            <li><a href="#seletores">Seletores</a></li>
+            <li><a href="#layout">Layout e Display</a></li>
+            <li><a href="#caixas">Modelo de Caixa</a></li>
+            <li><a href="#tipografia">Tipografia</a></li>
+            <li><a href="#cores-fundo">Cores e Fundo</a></li>
+            <li><a href="#responsividade">Responsividade</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="css-intro" class="tag-explicacao">
+            <h2>Estrutura do CSS</h2>
+            <p>CSS é composto por **regras** que ditam como os elementos HTML devem ser exibidos.</p>
+            <p>Uma regra é formada por um **seletor** e um **bloco de declaração**, contendo **propriedades** e **valores**.</p>
+            
+            <h4>Sintaxe:</h4>
+            <pre><code>seletor {
+    propriedade: valor; 
+    propriedade-2: valor-2; 
+}</code></pre>
+            
+            <p>Aprender CSS é dominar as **Propriedades** e os **Seletores**.</p>
+        </section>
+
+<section id="seletores">
+    <h2>Seletores (Como Mirar no HTML)</h2>
+    <p>Os seletores são o mecanismo do CSS que determina quais elementos HTML serão estilizados. Dominá-los é crucial para aplicar estilos de forma precisa e eficiente.</p>
+
+    <article class="tag-explicacao">
+        <h3>1. Seletores Básicos</h3>
+        <ul>
+            <li>**Seletor de Tipo (ou Tag):** Aplica a um tipo de elemento HTML.
+                <pre><code>p { color: gray; } /* Aplica a todas as tags &lt;p&gt; */</code></pre>
+            </li>
+            <li>**Seletor de Classe:** Aplica a elementos que possuem um atributo <code>class</code> específico (precedido por um ponto <code>.</code>). Este é o mais comum e flexível.
+                <pre><code>.titulo-destaque { font-weight: bold; } /* Aplica a &lt;h2 class="titulo-destaque"&gt; */</code></pre>
+            </li>
+            <li>**Seletor de ID:** Aplica a um único elemento com um <code>id</code> específico (precedido por cerquilha <code>#</code>). Use-o raramente, pois IDs devem ser únicos.
+                <pre><code>#menu-principal { background-color: black; } /* Aplica a &lt;nav id="menu-principal"&gt; */</code></pre>
+            </li>
+            <li>**Seletor Universal:** Seleciona *todos* os elementos da página (símbolo asterisco <code>*</code>).
+                <pre><code>* { margin: 0; padding: 0; } /* Remove margens e paddings padrão de todos os elementos */</code></pre>
+            </li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>2. Seletores Combinadores (Relacionamentos)</h3>
+        <p>Eles selecionam elementos com base em seu relacionamento com outros elementos.</p>
+        <ul>
+            <li>**Descendente (Espaço):** Seleciona um elemento que está *dentro* de outro.
+                <pre><code>ul li { list-style: square; } /* Seleciona apenas os &lt;li&gt; que estão dentro de um &lt;ul&gt; */</code></pre>
+            </li>
+            <li>**Filho Direto (`>`):** Seleciona um elemento que é filho *direto* de outro (não netos, bisnetos, etc.).
+                <pre><code>header > h1 { font-size: 2em; } /* Seleciona &lt;h1&gt; que são filhos diretos de &lt;header&gt; */</code></pre>
+            </li>
+            <li>**Irmão Adjacente (`+`):** Seleciona o elemento que está *imediatamente* após outro elemento, no mesmo nível.
+                <pre><code>h2 + p { margin-top: 5px; } /* Seleciona o &lt;p&gt; que vem logo após um &lt;h2&gt; */</code></pre>
+            </li>
+            <li>**Irmão Geral (`~`):** Seleciona todos os elementos que vêm *depois* de um elemento específico, no mesmo nível.
+                <pre><code>h2 ~ p { color: #555; } /* Seleciona todos os &lt;p&gt; que vêm depois do &lt;h2&gt; */</code></pre>
+            </li>
+        </ul>
+    </article>
+    
+    <article class="tag-explicacao">
+        <h3>3. Seletores de Atributo</h3>
+        <p>Seleciona elementos com base em seus atributos HTML.</p>
+        <pre><code>a[target="_blank"] { color: red; } /* Seleciona links que abrem em nova aba */
+input[type="submit"] { background-color: green; } /* Seleciona o botão de envio */</code></pre>
+    </article>
+    
+    <article class="tag-explicacao">
+        <h3>4. Pseudo-Classes (Estado e Posição)</h3>
+        <p>Selecionam elementos com base em seu estado atual ou sua posição na estrutura.</p>
+        <ul>
+            <li>**Estados (Interativos):** Mudam o estilo com base na interação do usuário.
+                <pre><code>a:hover { opacity: 0.8; } /* Quando o mouse está sobre o link */
+input:focus { border-color: blue; } /* Quando o campo de input está ativo */
+a:visited { color: purple; } /* Links que já foram visitados */</code></pre>
+            </li>
+            <li>**Estruturais (Posição):** Selecionam elementos com base em sua ordem.
+                <pre><code>li:first-child { font-weight: bold; } /* O primeiro item da lista &lt;li&gt; */
+p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo para "listras" em tabelas) */</code></pre>
+            </li>
+            <li>**Conteúdo:**
+                <pre><code>p:empty { display: none; } /* Esconde parágrafos que não têm conteúdo (vazios) */</code></pre>
+            </li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>5. Pseudo-Elementos</h3>
+        <p>Permitem estilizar partes de um elemento que não são elementos HTML reais (precedidos por dois pontos duplos <code>::</code>).</p>
+        <ul>
+            <li>`::before` e `::after`: Adiciona conteúdo e estilo *antes* ou *depois* do conteúdo real de um elemento. Usado para ícones e decorações.</li>
+            <li>`::first-letter`: Estiliza a primeira letra de um bloco de texto.</li>
+            <li>`::selection`: Estiliza o texto que o usuário seleciona com o mouse.</li>
+        </ul>
+        <pre><code>h2::before { content: "➡️ "; color: blue; } /* Adiciona uma seta antes do título */</code></pre>
+    </article>
+
+</section>
+
+<section id="layout">
+    <h2>Layout e Display (Posicionamento e Fluxo)</h2>
+    <p>Esta seção define como os elementos são apresentados na tela e como interagem uns com os outros. É aqui que o design da página ganha forma.</p>
+
+    <article class="tag-explicacao">
+        <h3>1. Propriedade `display`</h3>
+        <p>A propriedade `display` é a base do layout, definindo o tipo de caixa que um elemento gera.</p>
+        <ul>
+            <li>`display: block;`: Ocupa toda a largura disponível e força uma quebra de linha após o elemento (ex: `&lt;p&gt;`, `&lt;div&gt;`, `&lt;h1&gt;`). Aceita `width` e `height`.</li>
+            <li>`display: inline;`: Ocupa apenas o espaço necessário para o seu conteúdo (ex: `&lt;span&gt;`, `&lt;a&gt;`, `&lt;strong&gt;`). **Não** aceita `width` e `height`.</li>
+            <li>`display: inline-block;`: Comporta-se como um elemento `inline` (não quebra linha), mas aceita `width` e `height` como um `block`. Ótimo para menus de navegação simples.</li>
+            <li>`display: none;`: Remove completamente o elemento do fluxo da página (não ocupa espaço).</li>
+            <li>`display: flex;`: Inicia o contexto Flexbox (veja abaixo).</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>2. Flexbox (`display: flex`) - Layouts de Uma Dimensão</h3>
+        <p>O Flexbox é um módulo poderoso para organizar itens em uma linha ou uma coluna, garantindo que eles se ajustem ao espaço disponível. Requer dois tipos de elementos: o **Contêiner Pai** (`display: flex`) e os **Itens Filhos**.</p>
+        <h4>Propriedades do Contêiner (Pai):</h4>
+        <ul>
+            <li>`justify-content`: Distribui o espaço entre os itens no eixo principal (horizontal por padrão). Valores: `center`, `space-between`, `space-around`, `flex-start`.</li>
+            <li>`align-items`: Distribui o espaço entre os itens no eixo secundário (vertical por padrão). Valores: `center`, `flex-start`, `stretch`.</li>
+            <li>`flex-direction`: Define a direção do fluxo (`row`, `row-reverse`, `column`, `column-reverse`).</li>
+        </ul>
+        <h4>Exemplo de Uso:</h4>
+        <pre><code>.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribui os links uniformemente */
+    align-items: center; /* Centraliza verticalmente */
+}</code></pre>
+    </article>
+    
+    <article class="tag-explicacao">
+        <h3>3. Posicionamento (`position`)</h3>
+        <p>Define como um elemento é posicionado na página. Usado em conjunto com `top`, `bottom`, `left`, e `right`.</p>
+        <ul>
+            <li>`position: static;`: O padrão. O elemento segue o fluxo normal do documento. `top/left/etc.` não funcionam.</li>
+            <li>`position: relative;`: O elemento é posicionado **em relação a si mesmo**, mantendo seu espaço original no fluxo.</li>
+            <li>`position: absolute;`: O elemento é removido do fluxo e posicionado **em relação ao seu ancestral posicionado mais próximo** (qualquer um que não seja `static`). Se nenhum ancestral for posicionado, ele se posiciona em relação ao `&lt;body&gt;`.</li>
+            <li>`position: fixed;`: O elemento é removido do fluxo e posicionado **em relação à viewport (janela do navegador)**. Permanece no mesmo local mesmo com a rolagem (ex: o seu botão "Voltar ao Topo").</li>
+            <li>`position: sticky;`: Comporta-se como `relative` até que o usuário role a página até um certo ponto, quando então se comporta como `fixed`.</li>
+        </ul>
+    </article>
+    
+    <article class="tag-explicacao">
+        <h3>4. Grid Layout (`display: grid`) - Layouts de Duas Dimensões</h3>
+        <p>O Grid CSS é para layouts de duas dimensões (linhas **e** colunas simultaneamente). Ideal para estruturas complexas, como galerias e o layout principal da página.</p>
+        <ul>
+            <li>`display: grid;`: Inicia o contexto Grid no contêiner.</li>
+            <li>`grid-template-columns`: Define o número e o tamanho das colunas (ex: `grid-template-columns: 1fr 1fr 1fr;` cria três colunas iguais).</li>
+            <li>`grid-gap` / `gap`: Define o espaçamento entre as células do grid.</li>
+        </ul>
+        <pre><code>.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas de tamanho flexível */
+    gap: 20px;
+}</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>5. Float e Clear (Histórico)</h3>
+        <p>A propriedade `float` costumava ser a principal ferramenta de layout, mas hoje é usada principalmente para fazer o texto "envolver" uma imagem ou um elemento.</p>
+        <ul>
+            <li>`float: left;` / `float: right;`: Move o elemento para o lado especificado, permitindo que outros conteúdos fluam ao redor dele.</li>
+            <li>`clear: both;`: Usada em um elemento que **não** deve fluir ao lado de um elemento flutuante (quebra o fluxo).</li>
+        </ul>
+    </article>
+
+</section>
+
+<section id="caixas">
+    <h2>Modelo de Caixa (Box Model)</h2>
+    <p>O Box Model define como os elementos ocupam espaço em uma página. Todo elemento HTML é uma caixa, composta por quatro camadas concêntricas.  </p>
+    <p>A estrutura de fora para dentro é: **Margem (Margin) > Borda (Border) > Preenchimento (Padding) > Conteúdo (Content)**.</p>
+
+    <article class="tag-explicacao">
+        <h3>1. `content` (Conteúdo)</h3>
+        <p>É a área central da caixa, onde o conteúdo real do elemento (texto, imagens) é exibido. Suas dimensões são definidas pelas propriedades `width` (largura) e `height` (altura).</p>
+        <pre><code>.minha-caixa {
+    width: 300px; /* Largura da área de conteúdo */
+    height: 150px; /* Altura da área de conteúdo */
+}</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>2. `padding` (Preenchimento)</h3>
+        <p>É o espaço vazio que fica **entre a borda e o conteúdo**. Ele "empurra" o conteúdo para longe da borda. Ele faz parte da área de fundo (background) do elemento.</p>
+        <p>Pode ser definido de forma concisa (shorthand) ou por lado:</p>
+        <ul>
+            <li>**Shorthand (4 valores):** `padding: 10px 20px 30px 40px;` (Topo Direita Baixo Esquerda)</li>
+            <li>**Shorthand (2 valores):** `padding: 10px 20px;` (Topo/Baixo | Direita/Esquerda)</li>
+            <li>**Lados Individuais:** `padding-top`, `padding-right`, `padding-bottom`, `padding-left`.</li>
+        </ul>
+        <pre><code>.card {
+    padding: 15px; /* 15px de padding em todos os 4 lados */
+    padding-left: 25px; /* Sobrescreve apenas o lado esquerdo */
+}</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>3. `border` (Borda)</h3>
+        <p>É a linha que envolve o preenchimento (padding) e o conteúdo. Ela tem três partes essenciais que podem ser definidas com o shorthand:</p>
+        <p><code>border: &lt;largura&gt; &lt;estilo&gt; &lt;cor&gt;;</code></p>
+        <ul>
+            <li>**Estilo:** Obrigatório (`solid`, `dotted`, `dashed`, etc.).</li>
+            <li>**Largura:** Espessura da linha (ex: `2px`).</li>
+            <li>**Cor:** Cor da linha.</li>
+        </ul>
+        <pre><code>.divisoria {
+    border: 3px solid #ff0000; /* Borda vermelha sólida de 3px */
+    border-radius: 8px; /* Arredonda os cantos */
+}</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>4. `margin` (Margem)</h3>
+        <p>É o espaço vazio que fica **fora da borda**, empurrando outros elementos para longe desta caixa. A margem **não** faz parte da área de fundo do elemento.</p>
+        <p>A sintaxe é idêntica à do `padding` (shorthand de 4 ou 2 valores). A propriedade `margin: auto` é importante.</p>
+        <h4>Centralizando Blocos:</h4>
+        <p>Para centralizar horizontalmente um elemento de bloco com largura definida, use a margem automática:</p>
+        <pre><code>.container-centralizado {
+    width: 800px;
+    margin: 0 auto; /* 0px de margem em cima/baixo, e auto nas laterais */
+}</code></pre>
+        <h4>Colapso de Margens:</h4>
+        <p>Margens verticais (topo/baixo) de elementos adjacentes se "colapsam", ou seja, o espaço final entre eles será o valor da **maior** das duas margens, e não a soma delas.</p>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>Propriedade Crucial: `box-sizing`</h3>
+        <p>Por padrão, `width` e `height` definem apenas o tamanho da área de **Conteúdo**. Isso significa que adicionar `padding` ou `border` faz a caixa ficar **maior** do que o tamanho definido.</p>
+        <p>A propriedade `box-sizing: border-box;` resolve isso. Quando usada, `width` e `height` definem o tamanho total da caixa, e o `padding` e `border` são incluídos *para dentro* desse tamanho.</p>
+        <p>É altamente recomendado aplicar isso globalmente:</p>
+        <pre><code>/* Use isso no início do seu style.css */
+* {
+    box-sizing: border-box; 
+}</code></pre>
+    </article>
+
+</section>
+
+<section id="tipografia">
+    <h2>Tipografia e Texto</h2>
+    <p>A tipografia não serve apenas para formatar o texto, mas para garantir a legibilidade e definir a voz visual do seu projeto.</p>
+
+    <article class="tag-explicacao">
+        <h3>1. Família e Tamanho de Fonte</h3>
+        <ul>
+            <li>`font-family`: Define a fonte usada. É sempre uma boa prática fornecer uma lista de fontes de fallback.
+                <pre><code>body { 
+    font-family: Arial, "Helvetica Neue", sans-serif; /* Fallback: Arial -> Helvetica -> qualquer fonte sem serifa */
+}</code></pre>
+            </li>
+            <li>`font-size`: Define o tamanho do texto. Use unidades relativas (`em`, `rem`, `%`) para melhor responsividade.
+                <pre><code>p { font-size: 16px; } 
+h1 { font-size: 2.5rem; } /* 2.5 vezes o tamanho da fonte raiz (root) */</code></pre>
+            </li>
+            <li>`font-weight`: Define a espessura da fonte (ex: `normal`, `bold`, ou valores numéricos de `100` a `900`).
+                <pre><code>strong { font-weight: 700; } /* Mais espesso que 'bold' padrão */</code></pre>
+            </li>
+            <li>`font-style`: Define o estilo da fonte (ex: `normal`, `italic`).</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>2. Cor e Alinhamento</h3>
+        <ul>
+            <li>`color`: Define a cor do texto. Pode usar valores hexadecimais (`#ff0000`), nomes de cor (`red`) ou RGB/HSL.</li>
+            <li>`text-align`: Define o alinhamento horizontal do texto.
+                <pre><code>.cabecalho-texto { text-align: center; } /* Centraliza o texto */
+p { text-align: justify; } /* Alinha o texto em ambas as margens (justificado) */</code></pre>
+            </li>
+            <li>`text-decoration`: Adiciona ou remove decorações como sublinhado.
+                <pre><code>a { text-decoration: none; } /* Remove o sublinhado padrão dos links */</code></pre>
+            </li>
+            <li>`text-transform`: Muda a capitalização do texto sem alterar o HTML.
+                <pre><code>.titulo { text-transform: uppercase; } /* Converte todo o texto para maiúsculas */</code></pre>
+            </li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>3. Espaçamento e Fluxo</h3>
+        <ul>
+            <li>`line-height`: Define a altura da linha, controlando o espaçamento vertical entre as linhas de texto. Geralmente, um valor sem unidade (ex: `1.5`) é o ideal.
+                <pre><code>p { line-height: 1.6; } /* 1.6 vezes o tamanho da fonte */</code></pre>
+            </li>
+            <li>`letter-spacing`: Define o espaçamento horizontal entre as letras.
+                <pre><code>h1 { letter-spacing: -1px; } /* Diminui o espaçamento para títulos grandes */</code></pre>
+            </li>
+            <li>`word-spacing`: Define o espaçamento horizontal entre as palavras.</li>
+            <li>`white-space`: Controla como os espaços em branco são tratados dentro de um elemento (ex: `pre-wrap` respeita quebras de linha e envolve o texto).</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>4. Outros Efeitos de Texto</h3>
+        <ul>
+            <li>`text-shadow`: Adiciona uma sombra ao texto.
+                <pre><code>.logo { text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); } /* X Y Blur Cor */</code></pre>
+            </li>
+            <li>`overflow-wrap`: Especifica se o navegador pode quebrar uma linha dentro de uma palavra para evitar que o texto transborde do contêiner.</li>
+        </ul>
+    </article>
+
+</section>
+
+<section id="cores-fundo">
+    <h2>Cores e Fundo (Backgrounds)</h2>
+    <p>As propriedades de cor e fundo controlam a aparência visual e o contraste dos elementos, usando diferentes modelos de cor e técnicas de imagem.</p>
+
+    <article class="tag-explicacao">
+        <h3>1. Definição de Cores (`color` e `background-color`)</h3>
+        <p>O CSS suporta vários modelos de cor. A propriedade `color` define a cor do **texto**, e `background-color` define a cor de **fundo**.</p>
+        
+        <h4>Modelos de Cores:</h4>
+        <ul>
+            <li>**Hexadecimal:** O mais comum, usa 6 dígitos após o `#` (ex: `#FF0000` para vermelho).</li>
+            <li>**RGB:** Define a intensidade de Vermelho, Verde e Azul (ex: `rgb(255, 0, 0)` para vermelho).</li>
+            <li>**RGBA:** RGB com um canal Alpha para **transparência** (ex: `rgba(0, 0, 0, 0.5)` para preto com 50% de opacidade).</li>
+            <li>**HSL:** Define Matiz (Hue), Saturação (Saturation) e Luminosidade (Lightness). Útil para ajustar cores de forma intuitiva.</li>
+        </ul>
+        <pre><code>.botao { 
+    color: white; /* Cor do texto */
+    background-color: #007bff; /* Cor de fundo principal */
+}</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>2. Imagens de Fundo (`background-image`)</h3>
+        <p>A propriedade `background-image` aceita uma imagem ou um gradiente para usar como fundo de um elemento. Geralmente usa-se a função `url()`. </p>
+        
+        <h4>Gradientes:</h4>
+        <p>Os gradientes são imagens geradas por CSS (não arquivos) que misturam cores suavemente.</p>
+        <ul>
+            <li>`linear-gradient()`: Transição de cor em linha reta (ex: de cima para baixo).</li>
+            <li>`radial-gradient()`: Transição de cor a partir de um ponto central.</li>
+        </ul>
+        <pre><code>.hero-section {
+    background-image: url('imagens/fundo.jpg');
+    /* OU */
+    background-image: linear-gradient(to right, blue, cyan); 
+}</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>3. Controle da Imagem de Fundo (Shorthand)</h3>
+        <p>O CSS oferece propriedades detalhadas para controlar como a imagem de fundo se comporta, mas o shorthand `background` é o mais usado.</p>
+        
+        <ul>
+            <li>`background-repeat`: Controla a repetição (ex: `no-repeat`, `repeat-x`, `repeat-y`).</li>
+            <li>`background-position`: Define onde a imagem começa (ex: `center`, `top right`, `50% 50%`).</li>
+            <li>`background-size`: Define o tamanho. Valores importantes são:
+                <ul>
+                    <li>`cover`: Redimensiona a imagem para cobrir toda a área (cortando o que for necessário). **Recomendado.**</li>
+                    <li>`contain`: Redimensiona para que a imagem seja totalmente visível dentro da área (pode deixar espaço vazio).</li>
+                </ul>
+            </li>
+            <li>`background-attachment`: Define se a imagem rola com o conteúdo (`scroll`) ou fica fixa (`fixed`) na viewport.</li>
+        </ul>
+        
+        <h4>Exemplo Completo (Shorthand):</h4>
+        <pre><code>.fundo-fixo {
+    /* Cor | Imagem | Repetição | Posição | Attachment */
+    background: #ccc url('imagem.png') no-repeat center fixed;
+    background-size: cover; /* Adicionado separadamente, pois 'cover' não é aceito no shorthand */
+}</code></pre>
+    </article>
+</section>
+        
+<section id="responsividade">
+    <h2>Responsividade e Media Queries</h2>
+    <p>Responsividade é a capacidade de um website se adaptar e ter uma boa aparência em todos os tamanhos de tela (desktops, tablets e smartphones). O HTML e o CSS fornecem as ferramentas essenciais para isso.</p>
+
+    <article class="tag-explicacao">
+        <h3>1. A Tag Meta de Viewport (HTML Essencial)</h3>
+        <p>Este é o primeiro passo e o mais crucial para a responsividade. Ele precisa estar no <code>&lt;head&gt;</code> do seu HTML. Sem ela, o navegador móvel assume a largura de um desktop e reduz o zoom.</p>
+        <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+        <ul>
+            <li>`width=device-width`: Define a largura da viewport como a largura real do dispositivo.</li>
+            <li>`initial-scale=1.0`: Define o nível de zoom inicial.</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>2. Media Queries (As Regras de Ouro do CSS)</h3>
+        <p>Media Queries permitem aplicar estilos CSS somente se certas condições forem verdadeiras (geralmente baseadas na largura da tela).</p>
+        <p>A abordagem recomendada é **Mobile First**: defina os estilos para telas pequenas por padrão e use Media Queries para ajustar para telas maiores.</p>
+        
+        <h4>Sintaxe e Breakpoints Comuns:</h4>
+        <p>Os valores de largura (`max-width`) são chamados de **breakpoints**.</p>
+        <pre><code>/* ESTILOS GERAIS AQUI (MOBILE FIRST) 
+  Estes valem para TODAS as telas.
+*/
+nav ul {
+    flex-direction: column; /* Colunas por padrão (Mobile) */
+}
+
+/* Aplica o estilo APENAS quando a largura da tela for no MÁXIMO 768px (Tablets) */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+/* Aplica o estilo APENAS quando a largura da tela for NO MÍNIMO 1024px (Desktops) */
+@media screen and (min-width: 1024px) {
+    nav ul {
+        flex-direction: row; /* Volta a ser Linha em telas grandes */
+        justify-content: center;
+    }
+}</code></pre>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>3. Unidades e Propriedades Relativas</h3>
+        <p>Para que o design se ajuste, use unidades relativas em vez de absolutas:</p>
+        <ul>
+            <li>**`%` (Porcentagem):** Útil para larguras relativas ao contêiner pai (ex: `width: 50%`).</li>
+            <li>**`em` / `rem`:** Útil para tamanhos de fonte e espaçamentos relativos ao tamanho da fonte base.</li>
+            <li>**`vw` (Viewport Width):** 1vw é 1% da largura da janela de visualização. Ótimo para tamanhos de fonte que escalam com a tela.</li>
+            <li>**`max-width` e `min-width`:** Cruciais para evitar que elementos fiquem muito grandes ou muito pequenos (ex: `img { max-width: 100%; height: auto; }`).</li>
+        </ul>
+    </article>
+
+    <article class="tag-explicacao">
+        <h3>4. Propriedades de Layout Responsivo</h3>
+        <p>O CSS moderno simplifica a responsividade:</p>
+        <ul>
+            <li>**Flexbox (`display: flex`)**: Usado para ajustar itens em uma linha única. A propriedade `flex-wrap: wrap;` permite que os itens quebrem para a próxima linha se não houver espaço.</li>
+            <li>**Grid (`display: grid`)**: Ideal para layouts complexos de 2D. Facilita a reordenação de seções inteiras com Media Queries.</li>
+        </ul>
+        <pre><code>.grid-responsivo {
+    display: flex;
+    flex-wrap: wrap; /* Faz os itens que não cabem irem para a linha de baixo */
+}</code></pre>
+    </article>
+</section>
+
+    </main>
+    
+    <button id="btnTopo" onclick="scrollToTop()" title="Voltar ao Topo">
+        ⬆️ Topo da Página
+    </button>
+    
+    <footer>
+        <p>© 2025 - Guia CSS - Chronos Dev</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
