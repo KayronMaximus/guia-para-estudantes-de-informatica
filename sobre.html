@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre John Kayron - Desenvolvedor Web</title>
     <link rel="stylesheet" href="./css/style.css">
-    
+
     <script>
         const savedTheme = localStorage.getItem('themePreference');
         if (savedTheme === 'dark') {
@@ -14,6 +15,7 @@
         }
     </script>
 </head>
+
 <body>
     <header>
         <h1>Sobre John Kayron</h1>
@@ -24,31 +26,34 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">⬅️ Guia HTML</a></li>
-            <li><a href="css.html">➡️ Guia CSS</a></li>
-            <li><a href="js.html">➡️ Guia JavaScript</a></li>
+            <li><a href="index.html">Guia HTML</a></li>
+            <li><a href="css.html">Guia CSS</a></li>
+            <li><a href="js.html">Guia JavaScript</a></li>
+            <li><a href="sql.html">Guia SQL</a></li>
             <li class="separator">|</li>
             <li><a href="#contato">Contato</a></li>
         </ul>
     </nav>
-    
+
     <main>
         <section id="apresentacao" class="tag-explicacao">
             <h2>👋 Quem sou eu?</h2>
-            <p>Olá! Meu nome é **John Kayron**. Sou um entusiasta da programação, focado em desenvolvimento web e na criação de projetos educacionais. Acredito que a melhor forma de aprender é **construindo e documentando**, por isso criei este guia completo de HTML, CSS e JavaScript.</p>
+            <p>Olá! Meu nome é John Kayron. Sou um entusiasta da programação, focado em desenvolvimento web e na
+                criação de projetos educacionais. Acredito que a melhor forma de aprender é construindo e
+                documentando, por isso criei este guia completo de HTML, CSS e JavaScript.</p>
         </section>
 
         <section id="habilidades" class="tag-explicacao">
             <h2>🛠️ Minhas Habilidades Técnicas</h2>
-            <p>Minhas principais ferramentas no desenvolvimento Front-end são:</p>
+            <p>Minhas principais ferramentas no desenvolvimento Front-end e Banco de Dados são:</p>
             <ul>
-                <li>**HTML:** Estrutura básica e semântica de páginas web.</li>
-                <li>**CSS:** Estilização, layout e design responsivo.</li>
-                <li>**JavaScript:** Introdução à interatividade e manipulação do DOM.</li>
-                <li>**Git & GitHub:** Controle de versão e publicação de projetos.</li>
+                <li>HTML: Estrutura básica e semântica de páginas web.</li>
+                <li>CSS: Estilização, layout e design responsivo.</li>
+                <li>JavaScript: Introdução à interatividade e manipulação do DOM.</li>
+                <li>SQL: Linguagem de consulta e manipulação de Bancos de Dados (DDL, DML).</li>
+                <li>Git & GitHub: Controle de versão e publicação de projetos.</li>
             </ul>
         </section>
-
         <section id="contato" class="tag-explicacao">
             <h2>📧 Contato e Links</h2>
             <p>Se você gostou deste projeto ou deseja entrar em contato:</p>
@@ -57,15 +62,16 @@
             <p><strong>Whatsapp:</strong> <a href="https://wa.me/98999953601" target="_blank">98999953601</a></p>
         </section>
     </main>
-    
+
     <button id="btnTopo" onclick="scrollToTop()" title="Voltar ao Topo">
         ⬆️ Topo da Página
     </button>
-    
+
     <footer>
         <p>© 2025 - Portfólio John Kayron</p>
     </footer>
 
     <script src="./js/script.js"></script>
 </body>
+
 </html>

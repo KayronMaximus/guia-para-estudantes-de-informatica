@@ -230,8 +230,8 @@ pre {
 
 /* 1. MUDANÇA GLOBAL (BODY) */
 .dark-mode {
-    background-color: #1f1f1f; /* Fundo principal escuro */
-    color: #e0e0e0; /* GARANTE QUE O TEXTO PRINCIPAL SEJA CLARO */
+  background-color: #1f1f1f; /* Fundo principal escuro */
+  color: #e0e0e0; /* GARANTE QUE O TEXTO PRINCIPAL SEJA CLARO */
 }
 
 /* 2. MUDANÇA DOS CONTÊINERES BRANCOS */
@@ -254,22 +254,22 @@ pre {
 
 /* Garante que o fundo das caixas de conteúdo seja escuro, e o texto seja CLARO */
 .dark-mode .tag-explicacao {
-    background-color: #2b2b2b;
-    border-color: #3d3d3d;
-    color: #e0e0e0 !important; /* Adicione !important temporariamente para teste se a cor não resolver, mas evite em produção */
+  background-color: #2b2b2b;
+  border-color: #3d3d3d;
+  color: #e0e0e0 !important; /* Adicione !important temporariamente para teste se a cor não resolver, mas evite em produção */
 }
 
 /* Garante que o texto dos parágrafos e listas seja CLARO */
 .dark-mode .tag-explicacao p,
 .dark-mode .tag-explicacao ul,
 .dark-mode .tag-explicacao li {
-    color: #e0e0e0;
+  color: #e0e0e0;
 }
 
 /* Garante que todos os títulos H2 e H3 sejam CLAROS */
 .dark-mode h2,
 .dark-mode h3 {
-    color: #f0f0f0;
+  color: #f0f0f0;
 }
 
 /* 4. MUDANÇA DE CÓDIGO E BLOCOS PRE */
@@ -372,4 +372,34 @@ table {
     padding: 8px 10px;
     font-size: 14px;
   }
+}
+/* ESTILOS PARA AS TABELAS DE COMANDOS */
+.tabela-comandos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 0.9em;
+}
+
+.tabela-comandos th,
+.tabela-comandos td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.tabela-comandos thead {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* DARK MODE para as tabelas de comandos */
+.dark-mode .tabela-comandos th,
+.dark-mode .tabela-comandos td {
+  border: 1px solid #444;
+}
+
+.dark-mode .tabela-comandos thead {
+  background-color: #333;
+  color: #f0f0f0;
 }

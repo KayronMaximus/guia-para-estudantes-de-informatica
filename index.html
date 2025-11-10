@@ -26,9 +26,10 @@
 
     <nav>
         <ul>
-            <li><a href="css.html">➡️ Guia CSS</a></li>
-            <li><a href="js.html">➡️ Guia JavaScript</a></li>
-            <li><a href="sobre.html">➡️ Sobre</a></li>
+            <li><a href="css.html">Guia CSS</a></li>
+            <li><a href="js.html">Guia JavaScript</a></li>
+            <li><a href="sql.html">Guia SQL</a></li>
+            <li><a href="sobre.html">👤 Sobre Mim</a></li>
             <li class="separator">|</li>
 
             <li><a href="#estrutura">Estrutura</a></li>
@@ -76,7 +77,7 @@
             <article class="tag-explicacao">
                 <h3><code>&lt;body&gt;</code> - O "Corpo" (Conteúdo)</h3>
                 <p>Esta é a tag mais importante para o conteúdo. Tudo o que você quer que o usuário *veja* na página —
-                    textos, imagens, vídeos, botões — deve estar dentro da tag <code>&lt;body&gt;</code>.</p>
+                    texto*s, imagens, vídeos, botões — deve estar dentro da tag <code>&lt;body&gt;</code>.</p>
             </article>
 
             <article class="tag-explicacao">
@@ -93,7 +94,8 @@
             <article class="tag-explicacao">
                 <h3><code>&lt;meta&gt;</code> - Metadados</h3>
                 <p>Esta é uma tag "auto-fechável" (não possui <code>&lt;/meta&gt;</code>) que vive dentro do
-                    <code>&lt;head&gt;</code>. Ela fornece metadados (dados sobre dados) ao navegador.</p>
+                    <code>&lt;head&gt;</code>. Ela fornece metadados (dados sobre dados) ao navegador.
+                </p>
                 <h4>Exemplos Essenciais:</h4>
                 <pre><code>&lt;!-- Define o padrão de caracteres (essencial para acentos) --&gt;
 &lt;meta charset="UTF-8"&gt;
@@ -151,13 +153,15 @@
 
             <article class="tag-explicacao">
                 <h3><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>,
-                    <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> - Títulos (Headings)</h3>
+                    <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> - Títulos (Headings)
+                </h3>
                 <p>Essas tags definem títulos e subtítulos. <code>&lt;h1&gt;</code> é o título mais importante da página
                     (geralmente o título principal) e a hierarquia desce até o <code>&lt;h6&gt;</code>, o menos
                     importante.</p>
                 <p><strong>Regra de Ouro:</strong> Nunca pule níveis (ex: de um <code>&lt;h2&gt;</code> para um
                     <code>&lt;h4&gt;</code>). Use-os em ordem para manter a estrutura lógica. Você deve ter apenas um
-                    <code>&lt;h1&gt;</code> por página.</p>
+                    <code>&lt;h1&gt;</code> por página.
+                </p>
                 <h4>Exemplo de Uso:</h4>
                 <pre><code>&lt;h1&gt;Título Principal da Página&lt;/h1&gt;
 &lt;h2&gt;Assunto 1&lt;/h2&gt;
@@ -229,7 +233,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                 <ul>
                     <li><code>&lt;blockquote&gt;</code>: Usada para grandes blocos de citação, geralmente de outra
                         fonte. O navegador costuma adicionar um recuo (indentação) nela. Pode ter um atributo
-                        <code>cite</code> com a URL da fonte.</li>
+                        <code>cite</code> com a URL da fonte.
+                    </li>
                     <li><code>&lt;q&gt;</code>: Usada para pequenas citações *dentro* de uma linha. O navegador
                         (geralmente) adiciona aspas automaticamente.</li>
                 </ul>
@@ -253,7 +258,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                     <li><code>&lt;sup&gt;</code>: Texto <sup>sobrescrito</sup> (ex: 2<sup>10</sup>).</li>
                     <li><code>&lt;mark&gt;</code>: <mark>Marca</mark> um texto, como se fosse um marcador amarelo.</li>
                     <li><code>&lt;time&gt;</code>: Marca uma data ou hora de forma semântica. Ex:
-                        <code>&lt;time datetime="2025-12-25"&gt;Natal&lt;/time&gt;</code>.</li>
+                        <code>&lt;time datetime="2025-12-25"&gt;Natal&lt;/time&gt;</code>.
+                    </li>
                     <li><code>&lt;u&gt;</code>: (Underline) Sublinhado. <strong>Evite usar</strong>, pois os usuários
                         pensam que é um link.</li>
                     <li><code>&lt;s&gt;</code> ou <code>&lt;del&gt;</code>: <s>Texto riscado</s>, usado para indicar
@@ -284,9 +290,11 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                 <h4>Atributos úteis:</h4>
                 <ul>
                     <li><code>type</code>: Permite mudar o marcador (<code>type="A"</code> para A, B, C;
-                        <code>type="i"</code> para i, ii, iii).</li>
+                        <code>type="i"</code> para i, ii, iii).
+                    </li>
                     <li><code>start</code>: Permite começar a contagem de um número diferente (ex:
-                        <code>start="5"</code>).</li>
+                        <code>start="5"</code>).
+                    </li>
                     <li><code>reversed</code>: Faz a contagem ser decrescente.</li>
                 </ul>
             </article>
@@ -294,7 +302,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
             <article class="tag-explicacao">
                 <h3><code>&lt;li&gt;</code> - Item da Lista (List Item)</h3>
                 <p>Esta é a tag que define o item em si. Ela <strong>sempre</strong> deve estar dentro de uma tag
-                    <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>.</p>
+                    <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>.
+                </p>
                 <p>Você não pode ter um <code>&lt;li&gt;</code> solto; ele precisa de um "pai" (<code>&lt;ul&gt;</code>
                     ou <code>&lt;ol&gt;</code>).</p>
                 <h4>Exemplo de Uso (Lista Não Ordenada - Menu):</h4>
@@ -381,7 +390,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                 <h4>Exemplo de Uso:</h4>
                 <pre><code>&lt;img src="imagens/logo.png" alt="Logotipo do meu site"&gt;</code></pre>
                 <p>Você também pode definir o tamanho com os atributos <code>width</code> (largura) e
-                    <code>height</code> (altura), embora o CSS seja a forma preferida de fazer isso.</p>
+                    <code>height</code> (altura), embora o CSS seja a forma preferida de fazer isso.
+                </p>
                 <pre><code>&lt;img src="foto.jpg" alt="Um gato" width="300" height="200"&gt;</code></pre>
             </article>
 
@@ -420,7 +430,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                 <ul>
                     <li><code>&lt;source&gt;</code>: Usada *dentro* de <code>&lt;video&gt;</code> ou
                         <code>&lt;audio&gt;</code> para oferecer múltiplos formatos de arquivo (o navegador escolhe o
-                        que suporta). Também usada dentro de <code>&lt;picture&gt;</code>.</li>
+                        que suporta). Também usada dentro de <code>&lt;picture&gt;</code>.
+                    </li>
                     <li><code>&lt;picture&gt;</code>: Permite carregar imagens diferentes dependendo do tamanho da tela
                         (design responsivo) ou formato suportado (ex: carregar <code>.webp</code> se o navegador
                         suportar, ou <code>.jpg</code> como fallback).</li>
@@ -482,7 +493,7 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                 <h4>Atributos Chave:</h4>
                 <ul>
                     <li><code>type</code>: Define o tipo de campo (texto, senha, e-mail, data, etc.).</li>
-                    <li><code>name</code>: **Obrigatório!** É o nome que o servidor usará para identificar o dado
+                    <li><code>name</code>: *Obrigatório!* É o nome que o servidor usará para identificar o dado
                         enviado.</li>
                     <li><code>value</code>: O valor padrão do campo.</li>
                 </ul>
@@ -511,10 +522,11 @@ São Paulo - SP&lt;/p&gt;</code></pre>
             <article class="tag-explicacao">
                 <h3><code>&lt;label&gt;</code> - Rótulo/Descrição do Campo</h3>
                 <p>A tag <code>&lt;label&gt;</code> cria um rótulo para um campo de formulário. Ela é vital para a
-                    **acessibilidade**, pois permite que leitores de tela descrevam o campo, e também melhora a
-                    **usabilidade**, permitindo que o usuário clique no texto do rótulo para ativar o campo.</p>
+                    *acessibilidade*, pois permite que leitores de tela descrevam o campo, e também melhora a
+                    *usabilidade*, permitindo que o usuário clique no texto do rótulo para ativar o campo.</p>
                 <p>O atributo <code>for</code> do <code>&lt;label&gt;</code> deve corresponder ao atributo
-                    <code>id</code> do <code>&lt;input&gt;</code>.</p>
+                    <code>id</code> do <code>&lt;input&gt;</code>.
+                </p>
                 <h4>Exemplo de Uso:</h4>
                 <pre><code>&lt;label for="email_campo"&gt;Seu Email:&lt;/label&gt;
 &lt;input type="email" id="email_campo" name="email" required&gt;</code></pre>
@@ -567,7 +579,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                     <li><code>&lt;fieldset&gt;</code>: Agrupa logicamente um conjunto de campos (ex: "Informações
                         Pessoais").</li>
                     <li><code>&lt;legend&gt;</code>: Fornece um título para o grupo de campos criado pelo
-                        <code>&lt;fieldset&gt;</code>.</li>
+                        <code>&lt;fieldset&gt;</code>.
+                    </li>
                 </ul>
             </article>
 
@@ -575,7 +588,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                 <h3>Outras Tags de Formulário:</h3>
                 <ul>
                     <li><code>&lt;datalist&gt;</code>: Fornece sugestões predefinidas para um campo
-                        <code>&lt;input&gt;</code> (autocompletar).</li>
+                        <code>&lt;input&gt;</code> (autocompletar).
+                    </li>
                     <li><code>&lt;output&gt;</code>: Exibe o resultado de um cálculo ou ação do usuário.</li>
                 </ul>
             </article>
@@ -612,7 +626,7 @@ São Paulo - SP&lt;/p&gt;</code></pre>
 
             <article class="tag-explicacao">
                 <h3><code>&lt;th&gt;</code> - Célula de Cabeçalho (Table Header)</h3>
-                <p>Usada para definir uma célula que serve como **cabeçalho** para uma coluna ou linha. O navegador
+                <p>Usada para definir uma célula que serve como *cabeçalho* para uma coluna ou linha. O navegador
                     aplica automaticamente o estilo negrito e centraliza o conteúdo. É crucial para a acessibilidade.
                 </p>
                 <p><strong>Atributo:</strong> <code>scope</code>, define se o cabeçalho se aplica à <code>col</code>
@@ -621,7 +635,7 @@ São Paulo - SP&lt;/p&gt;</code></pre>
 
             <article class="tag-explicacao">
                 <h3><code>&lt;td&gt;</code> - Célula de Dados (Table Data)</h3>
-                <p>Usada para definir uma célula que contém os **dados** reais. É o corpo da tabela, onde as informações
+                <p>Usada para definir uma célula que contém os *dados* reais. É o corpo da tabela, onde as informações
                     são exibidas.</p>
 
                 <h4>Exemplo Combinado (`tr`, `th`, `td`):</h4>
@@ -645,7 +659,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                     estrutura e a acessibilidade:</p>
                 <ul>
                     <li><code>&lt;thead&gt;</code>: Contém as linhas de cabeçalho (geralmente uma ou duas linhas com
-                        <code>&lt;th&gt;</code>).</li>
+                        <code>&lt;th&gt;</code>).
+                    </li>
                     <li><code>&lt;tbody&gt;</code>: Contém as linhas de dados principais (o corpo da tabela).</li>
                     <li><code>&lt;tfoot&gt;</code>: Contém linhas de rodapé (ex: total de colunas, notas de rodapé).
                     </li>
@@ -659,8 +674,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                 <p>Permitem aplicar estilos (via CSS) a colunas inteiras de forma eficiente. Não são frequentemente
                     usadas, mas são úteis para colorir colunas alternadas, por exemplo.</p>
                 <h4>Exemplo de Uso Avançado:</h4>
-                <p><code>colspan</code>: Faz uma célula se estender por várias **colunas**.</p>
-                <p><code>rowspan</code>: Faz uma célula se estender por várias **linhas**.</p>
+                <p><code>colspan</code>: Faz uma célula se estender por várias *colunas*.</p>
+                <p><code>rowspan</code>: Faz uma célula se estender por várias *linhas*.</p>
                 <pre><code>&lt;tr&gt;
     &lt;th colspan="2"&gt;Informação Combinada&lt;/th&gt; &lt;!-- Ocupa 2 colunas --&gt;
     &lt;td rowspan="2"&gt;Dado Vertical&lt;/td&gt; &lt;!-- Ocupa 2 linhas --&gt;
@@ -674,7 +689,7 @@ São Paulo - SP&lt;/p&gt;</code></pre>
             <p>Semântica significa "o significado" do código. Estas tags ajudam os navegadores e ferramentas (como
                 leitores de tela e robôs do Google) a entenderem qual a função de cada parte da sua página, mesmo antes
                 de ler o conteúdo.</p>
-            <p>O uso correto destas tags é a **melhor prática** para a construção de sites modernos.</p>
+            <p>O uso correto destas tags é a *melhor prática* para a construção de sites modernos.</p>
 
             <article class="tag-explicacao">
                 <h3><code>&lt;header&gt;</code> - Cabeçalho da Seção ou Página</h3>
@@ -682,7 +697,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                     página e contém o logotipo (<code>&lt;img&gt;</code>), o título principal (<code>&lt;h1&gt;</code>)
                     e, frequentemente, a barra de navegação (<code>&lt;nav&gt;</code>).</p>
                 <p><strong>Atenção:</strong> Você pode usar um <code>&lt;header&gt;</code> dentro de cada
-                    <code>&lt;article&gt;</code> ou <code>&lt;section&gt;</code>, não apenas no topo da página.</p>
+                    <code>&lt;article&gt;</code> ou <code>&lt;section&gt;</code>, não apenas no topo da página.
+                </p>
             </article>
 
             <article class="tag-explicacao">
@@ -780,8 +796,8 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                 <p>Ambas são usadas para desenhar gráficos e imagens, mas de maneiras diferentes:</p>
                 <ul>
                     <li><code>&lt;canvas&gt;</code>: Cria uma área de desenho onde o conteúdo é gerado via
-                        **JavaScript**. É ideal para gráficos dinâmicos, jogos e animações complexas.</li>
-                    <li><code>&lt;svg&gt;</code> (Scalable Vector Graphics): Permite desenhar gráficos **vetoriais**
+                        *JavaScript*. É ideal para gráficos dinâmicos, jogos e animações complexas.</li>
+                    <li><code>&lt;svg&gt;</code> (Scalable Vector Graphics): Permite desenhar gráficos *vetoriais*
                         diretamente no HTML. É baseado em XML, e seu conteúdo é escalável (não perde qualidade ao ser
                         ampliado). Ideal para ícones e logotipos.</li>
                 </ul>
@@ -829,7 +845,7 @@ São Paulo - SP&lt;/p&gt;</code></pre>
 
             <article class="tag-explicacao">
                 <h3>Atributos ARIA (Acessibilidade)</h3>
-                <p>Embora não sejam tags, os atributos **ARIA** (Accessible Rich Internet Applications) são cruciais
+                <p>Embora não sejam tags, os atributos *ARIA* (Accessible Rich Internet Applications) são cruciais
                     para completar o guia. Eles adicionam significado semântico onde o HTML nativo não é suficiente
                     (como em componentes criados com JavaScript).</p>
                 <p>Eles guiam tecnologias assistivas, como leitores de tela.</p>
@@ -847,12 +863,14 @@ São Paulo - SP&lt;/p&gt;</code></pre>
                     menos utilizadas:</p>
                 <ul>
                     <li><code>&lt;abbr&gt;</code>: Define uma abreviação (ex:
-                        <code>&lt;abbr title="Cascading Style Sheets"&gt;CSS&lt;/abbr&gt;</code>).</li>
+                        <code>&lt;abbr title="Cascading Style Sheets"&gt;CSS&lt;/abbr&gt;</code>).
+                    </li>
                     <li><code>&lt;address&gt;</code>: Usada para informações de contato do autor/dono do documento ou
                         artigo.</li>
                     <li><code>&lt;cite&gt;</code>: Usada para o título de uma obra (livro, música, filme).</li>
                     <li><code>&lt;kbd&gt;</code>: Representa uma entrada de teclado (ex: Pressione <kbd>Ctrl</kbd> +
-                        <kbd>C</kbd>).</li>
+                        <kbd>C</kbd>).
+                    </li>
                     <li><code>&lt;samp&gt;</code>: Representa a saída de um programa de computador.</li>
                     <li><code>&lt;var&gt;</code>: Representa uma variável em programação ou matemática.</li>
                 </ul>
@@ -861,23 +879,24 @@ São Paulo - SP&lt;/p&gt;</code></pre>
 
         <section id="obsoletas">
             <h2>❌ Tags e Atributos Obsoletos (Não Use!)</h2>
-            <p>Um guia completo deve incluir aquelas tags que foram **descontinuadas** no HTML5. Elas são mantidas por
-                navegadores por questões de retrocompatibilidade, mas devem ser **evitadas** em novos projetos. O motivo
-                é quase sempre: **O CSS faz isso melhor!**</p>
+            <p>Um guia completo deve incluir aquelas tags que foram *descontinuadas* no HTML5. Elas são mantidas por
+                navegadores por questões de retrocompatibilidade, mas devem ser *evitadas* em novos projetos. O motivo
+                é quase sempre: *O CSS faz isso melhor!*</p>
 
             <article class="tag-explicacao">
                 <h3>Tags de Estilo (Substituídas por CSS)</h3>
                 <p>Essas tags foram removidas porque sua função é puramente visual. O estilo deve ser feito com CSS.</p>
                 <ul>
-                    <li><code>&lt;font&gt;</code>: Usada para definir cor, tamanho e fonte. **Alternativa:**
+                    <li><code>&lt;font&gt;</code>: Usada para definir cor, tamanho e fonte. *Alternativa:*
                         Propriedades CSS como <code>font-family</code>, <code>font-size</code>, <code>color</code>.</li>
-                    <li><code>&lt;center&gt;</code>: Usada para centralizar conteúdo. **Alternativa:** Propriedades CSS
+                    <li><code>&lt;center&gt;</code>: Usada para centralizar conteúdo. *Alternativa:* Propriedades CSS
                         como <code>text-align: center;</code> ou Flexbox/Grid.</li>
                     <li><code>&lt;strike&gt;</code>, <code>&lt;s&gt;</code> e <code>&lt;u&gt;</code> (Uso puramente
-                        visual): Para riscado ou sublinhado. **Alternativa:** Embora <code>&lt;s&gt;</code> e
+                        visual): Para riscado ou sublinhado. *Alternativa:* Embora <code>&lt;s&gt;</code> e
                         <code>&lt;u&gt;</code> tenham ganhado significados semânticos de nicho, use
-                        <code>&lt;del&gt;</code> ou a propriedade CSS <code>text-decoration</code>.</li>
-                    <li><code>&lt;big&gt;</code> e <code>&lt;small&gt;</code> (para tamanho de fonte). **Alternativa:**
+                        <code>&lt;del&gt;</code> ou a propriedade CSS <code>text-decoration</code>.
+                    </li>
+                    <li><code>&lt;big&gt;</code> e <code>&lt;small&gt;</code> (para tamanho de fonte). *Alternativa:*
                         Propriedade CSS <code>font-size</code>.</li>
                 </ul>
             </article>
@@ -885,12 +904,14 @@ São Paulo - SP&lt;/p&gt;</code></pre>
             <article class="tag-explicacao">
                 <h3>Tags Estruturais de Navegação (Substituídas)</h3>
                 <ul>
-                    <li><code>&lt;acronym&gt;</code>: Usada para acrônimos. **Substituta:** Use
-                        <code>&lt;abbr&gt;</code> (abreviação).</li>
+                    <li><code>&lt;acronym&gt;</code>: Usada para acrônimos. *Substituta:* Use
+                        <code>&lt;abbr&gt;</code> (abreviação).
+                    </li>
                     <li><code>&lt;frame&gt;</code>, <code>&lt;frameset&gt;</code>, <code>&lt;noframes&gt;</code>: Usadas
-                        para criar divisões complexas no navegador. **Substituta:** Layouts com CSS (Flexbox/Grid) e
-                        <code>&lt;iframe&gt;</code> para embutir conteúdo.</li>
-                    <li><code>&lt;dir&gt;</code>: Lista de diretórios. **Substituta:** Use <code>&lt;ul&gt;</code>
+                        para criar divisões complexas no navegador. *Substituta:* Layouts com CSS (Flexbox/Grid) e
+                        <code>&lt;iframe&gt;</code> para embutir conteúdo.
+                    </li>
+                    <li><code>&lt;dir&gt;</code>: Lista de diretórios. *Substituta:* Use <code>&lt;ul&gt;</code>
                         (lista não ordenada).</li>
                 </ul>
             </article>

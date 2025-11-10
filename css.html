@@ -32,9 +32,10 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">⬅️ Guia HTML</a></li>
-            <li><a href="js.html">⬅️ Guia JavaScript</a></li>
-            <li><a href="sobre.html">⬅️ Sobre</a></li>
+            <li><a href="index.html">Guia HTML</a></li>
+            <li><a href="js.html">Guia JavaScript</a></li>
+            <li><a href="sql.html">Guia SQL</a></li>
+            <li><a href="sobre.html">👤 Sobre Mim</a></li>
             <li class="separator">|</li>
             <li><a href="#seletores">Seletores</a></li>
             <li><a href="#layout">Layout e Display</a></li>
@@ -49,12 +50,12 @@
         <section id="css-intro" class="tag-explicacao">
             <h2>Estrutura do CSS</h2>
             <p>
-                CSS é composto por **regras** que ditam como os elementos HTML devem
+                CSS é composto por *regras* que ditam como os elementos HTML devem
                 ser exibidos.
             </p>
             <p>
-                Uma regra é formada por um **seletor** e um **bloco de declaração**,
-                contendo **propriedades** e **valores**.
+                Uma regra é formada por um *seletor* e um *bloco de declaração*,
+                contendo *propriedades* e *valores*.
             </p>
 
             <h4>Sintaxe:</h4>
@@ -63,7 +64,7 @@
     propriedade-2: valor-2; 
 }</code></pre>
 
-            <p>Aprender CSS é dominar as **Propriedades** e os **Seletores**.</p>
+            <p>Aprender CSS é dominar as *Propriedades* e os *Seletores*.</p>
         </section>
 
         <section id="seletores">
@@ -78,23 +79,23 @@
                 <h3>1. Seletores Básicos</h3>
                 <ul>
                     <li>
-                        **Seletor de Tipo (ou Tag):** Aplica a um tipo de elemento HTML.
+                        *Seletor de Tipo (ou Tag):* Aplica a um tipo de elemento HTML.
                         <pre><code>p { color: gray; } /* Aplica a todas as tags &lt;p&gt; */</code></pre>
                     </li>
                     <li>
-                        **Seletor de Classe:** Aplica a elementos que possuem um atributo
+                        *Seletor de Classe:* Aplica a elementos que possuem um atributo
                         <code>class</code> específico (precedido por um ponto
                         <code>.</code>). Este é o mais comum e flexível.
                         <pre><code>.titulo-destaque { font-weight: bold; } /* Aplica a &lt;h2 class="titulo-destaque"&gt; */</code></pre>
                     </li>
                     <li>
-                        **Seletor de ID:** Aplica a um único elemento com um
+                        *Seletor de ID:* Aplica a um único elemento com um
                         <code>id</code> específico (precedido por cerquilha
                         <code>#</code>). Use-o raramente, pois IDs devem ser únicos.
                         <pre><code>#menu-principal { background-color: black; } /* Aplica a &lt;nav id="menu-principal"&gt; */</code></pre>
                     </li>
                     <li>
-                        **Seletor Universal:** Seleciona *todos* os elementos da página
+                        *Seletor Universal:* Seleciona *todos* os elementos da página
                         (símbolo asterisco <code>*</code>).
                         <pre><code>* { margin: 0; padding: 0; } /* Remove margens e paddings padrão de todos os elementos */</code></pre>
                     </li>
@@ -109,22 +110,22 @@
                 </p>
                 <ul>
                     <li>
-                        **Descendente (Espaço):** Seleciona um elemento que está *dentro*
+                        *Descendente (Espaço):* Seleciona um elemento que está *dentro*
                         de outro.
                         <pre><code>ul li { list-style: square; } /* Seleciona apenas os &lt;li&gt; que estão dentro de um &lt;ul&gt; */</code></pre>
                     </li>
                     <li>
-                        **Filho Direto (`>`):** Seleciona um elemento que é filho *direto*
+                        *Filho Direto (`>`):* Seleciona um elemento que é filho *direto*
                         de outro (não netos, bisnetos, etc.).
                         <pre><code>header > h1 { font-size: 2em; } /* Seleciona &lt;h1&gt; que são filhos diretos de &lt;header&gt; */</code></pre>
                     </li>
                     <li>
-                        **Irmão Adjacente (`+`):** Seleciona o elemento que está
+                        *Irmão Adjacente (`+`):* Seleciona o elemento que está
                         *imediatamente* após outro elemento, no mesmo nível.
                         <pre><code>h2 + p { margin-top: 5px; } /* Seleciona o &lt;p&gt; que vem logo após um &lt;h2&gt; */</code></pre>
                     </li>
                     <li>
-                        **Irmão Geral (`~`):** Seleciona todos os elementos que vêm
+                        *Irmão Geral (`~`):* Seleciona todos os elementos que vêm
                         *depois* de um elemento específico, no mesmo nível.
                         <pre><code>h2 ~ p { color: #555; } /* Seleciona todos os &lt;p&gt; que vêm depois do &lt;h2&gt; */</code></pre>
                     </li>
@@ -146,20 +147,20 @@ input[type="submit"] { background-color: green; } /* Seleciona o botão de envio
                 </p>
                 <ul>
                     <li>
-                        **Estados (Interativos):** Mudam o estilo com base na interação do
+                        *Estados (Interativos):* Mudam o estilo com base na interação do
                         usuário.
                         <pre><code>a:hover { opacity: 0.8; } /* Quando o mouse está sobre o link */
 input:focus { border-color: blue; } /* Quando o campo de input está ativo */
 a:visited { color: purple; } /* Links que já foram visitados */</code></pre>
                     </li>
                     <li>
-                        **Estruturais (Posição):** Selecionam elementos com base em sua
+                        *Estruturais (Posição):* Selecionam elementos com base em sua
                         ordem.
                         <pre><code>li:first-child { font-weight: bold; } /* O primeiro item da lista &lt;li&gt; */
 p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo para "listras" em tabelas) */</code></pre>
                     </li>
                     <li>
-                        **Conteúdo:**
+                        *Conteúdo:*
                         <pre><code>p:empty { display: none; } /* Esconde parágrafos que não têm conteúdo (vazios) */</code></pre>
                     </li>
                 </ul>
@@ -212,7 +213,7 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
                     <li>
                         `display: inline;`: Ocupa apenas o espaço necessário para o seu
                         conteúdo (ex: `&lt;span&gt;`, `&lt;a&gt;`, `&lt;strong&gt;`).
-                        **Não** aceita `width` e `height`.
+                        *Não* aceita `width` e `height`.
                     </li>
                     <li>
                         `display: inline-block;`: Comporta-se como um elemento `inline`
@@ -232,8 +233,8 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
                 <p>
                     O Flexbox é um módulo poderoso para organizar itens em uma linha ou
                     uma coluna, garantindo que eles se ajustem ao espaço disponível.
-                    Requer dois tipos de elementos: o **Contêiner Pai** (`display:
-                    flex`) e os **Itens Filhos**.
+                    Requer dois tipos de elementos: o *Contêiner Pai* (`display:
+                    flex`) e os *Itens Filhos*.
                 </p>
                 <h4>Propriedades do Contêiner (Pai):</h4>
                 <ul>
@@ -272,18 +273,18 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
                         documento. `top/left/etc.` não funcionam.
                     </li>
                     <li>
-                        `position: relative;`: O elemento é posicionado **em relação a si
-                        mesmo**, mantendo seu espaço original no fluxo.
+                        `position: relative;`: O elemento é posicionado *em relação a si
+                        mesmo*, mantendo seu espaço original no fluxo.
                     </li>
                     <li>
                         `position: absolute;`: O elemento é removido do fluxo e
-                        posicionado **em relação ao seu ancestral posicionado mais
-                        próximo** (qualquer um que não seja `static`). Se nenhum ancestral
+                        posicionado *em relação ao seu ancestral posicionado mais
+                        próximo* (qualquer um que não seja `static`). Se nenhum ancestral
                         for posicionado, ele se posiciona em relação ao `&lt;body&gt;`.
                     </li>
                     <li>
                         `position: fixed;`: O elemento é removido do fluxo e posicionado
-                        **em relação à viewport (janela do navegador)**. Permanece no
+                        *em relação à viewport (janela do navegador)*. Permanece no
                         mesmo local mesmo com a rolagem (ex: o seu botão "Voltar ao
                         Topo").
                     </li>
@@ -298,7 +299,7 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
             <article class="tag-explicacao">
                 <h3>4. Grid Layout (`display: grid`) - Layouts de Duas Dimensões</h3>
                 <p>
-                    O Grid CSS é para layouts de duas dimensões (linhas **e** colunas
+                    O Grid CSS é para layouts de duas dimensões (linhas *e* colunas
                     simultaneamente). Ideal para estruturas complexas, como galerias e o
                     layout principal da página.
                 </p>
@@ -333,7 +334,7 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
                         especificado, permitindo que outros conteúdos fluam ao redor dele.
                     </li>
                     <li>
-                        `clear: both;`: Usada em um elemento que **não** deve fluir ao
+                        `clear: both;`: Usada em um elemento que *não* deve fluir ao
                         lado de um elemento flutuante (quebra o fluxo).
                     </li>
                 </ul>
@@ -347,8 +348,8 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
                 elemento HTML é uma caixa, composta por quatro camadas concêntricas.
             </p>
             <p>
-                A estrutura de fora para dentro é: **Margem (Margin) > Borda (Border)
-                > Preenchimento (Padding) > Conteúdo (Content)**.
+                A estrutura de fora para dentro é: *Margem (Margin) > Borda (Border)
+                > Preenchimento (Padding) > Conteúdo (Content)*.
             </p>
 
             <article class="tag-explicacao">
@@ -367,22 +368,22 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
             <article class="tag-explicacao">
                 <h3>2. `padding` (Preenchimento)</h3>
                 <p>
-                    É o espaço vazio que fica **entre a borda e o conteúdo**. Ele
+                    É o espaço vazio que fica *entre a borda e o conteúdo*. Ele
                     "empurra" o conteúdo para longe da borda. Ele faz parte da área de
                     fundo (background) do elemento.
                 </p>
                 <p>Pode ser definido de forma concisa (shorthand) ou por lado:</p>
                 <ul>
                     <li>
-                        **Shorthand (4 valores):** `padding: 10px 20px 30px 40px;` (Topo
+                        *Shorthand (4 valores):* `padding: 10px 20px 30px 40px;` (Topo
                         Direita Baixo Esquerda)
                     </li>
                     <li>
-                        **Shorthand (2 valores):** `padding: 10px 20px;` (Topo/Baixo |
+                        *Shorthand (2 valores):* `padding: 10px 20px;` (Topo/Baixo |
                         Direita/Esquerda)
                     </li>
                     <li>
-                        **Lados Individuais:** `padding-top`, `padding-right`,
+                        *Lados Individuais:* `padding-top`, `padding-right`,
                         `padding-bottom`, `padding-left`.
                     </li>
                 </ul>
@@ -403,10 +404,10 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
                 </p>
                 <ul>
                     <li>
-                        **Estilo:** Obrigatório (`solid`, `dotted`, `dashed`, etc.).
+                        *Estilo:* Obrigatório (`solid`, `dotted`, `dashed`, etc.).
                     </li>
-                    <li>**Largura:** Espessura da linha (ex: `2px`).</li>
-                    <li>**Cor:** Cor da linha.</li>
+                    <li>*Largura:* Espessura da linha (ex: `2px`).</li>
+                    <li>*Cor:* Cor da linha.</li>
                 </ul>
                 <pre><code>.divisoria {
     border: 3px solid #ff0000; /* Borda vermelha sólida de 3px */
@@ -417,8 +418,8 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
             <article class="tag-explicacao">
                 <h3>4. `margin` (Margem)</h3>
                 <p>
-                    É o espaço vazio que fica **fora da borda**, empurrando outros
-                    elementos para longe desta caixa. A margem **não** faz parte da área
+                    É o espaço vazio que fica *fora da borda*, empurrando outros
+                    elementos para longe desta caixa. A margem *não* faz parte da área
                     de fundo do elemento.
                 </p>
                 <p>
@@ -438,7 +439,7 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
                 <p>
                     Margens verticais (topo/baixo) de elementos adjacentes se
                     "colapsam", ou seja, o espaço final entre eles será o valor da
-                    **maior** das duas margens, e não a soma delas.
+                    *maior* das duas margens, e não a soma delas.
                 </p>
             </article>
 
@@ -446,8 +447,8 @@ p:nth-child(odd) { background-color: #eee; } /* Parágrafos ímpares (ótimo par
                 <h3>Propriedade Crucial: `box-sizing`</h3>
                 <p>
                     Por padrão, `width` e `height` definem apenas o tamanho da área de
-                    **Conteúdo**. Isso significa que adicionar `padding` ou `border` faz
-                    a caixa ficar **maior** do que o tamanho definido.
+                    *Conteúdo*. Isso significa que adicionar `padding` ou `border` faz
+                    a caixa ficar *maior* do que o tamanho definido.
                 </p>
                 <p>
                     A propriedade `box-sizing: border-box;` resolve isso. Quando usada,
@@ -572,25 +573,25 @@ p { text-align: justify; } /* Alinha o texto em ambas as margens (justificado) *
                 <h3>1. Definição de Cores (`color` e `background-color`)</h3>
                 <p>
                     O CSS suporta vários modelos de cor. A propriedade `color` define a
-                    cor do **texto**, e `background-color` define a cor de **fundo**.
+                    cor do *texto*, e `background-color` define a cor de *fundo*.
                 </p>
 
                 <h4>Modelos de Cores:</h4>
                 <ul>
                     <li>
-                        **Hexadecimal:** O mais comum, usa 6 dígitos após o `#` (ex:
+                        *Hexadecimal:* O mais comum, usa 6 dígitos após o `#` (ex:
                         `#FF0000` para vermelho).
                     </li>
                     <li>
-                        **RGB:** Define a intensidade de Vermelho, Verde e Azul (ex:
+                        *RGB:* Define a intensidade de Vermelho, Verde e Azul (ex:
                         `rgb(255, 0, 0)` para vermelho).
                     </li>
                     <li>
-                        **RGBA:** RGB com um canal Alpha para **transparência** (ex:
+                        *RGBA:* RGB com um canal Alpha para *transparência* (ex:
                         `rgba(0, 0, 0, 0.5)` para preto com 50% de opacidade).
                     </li>
                     <li>
-                        **HSL:** Define Matiz (Hue), Saturação (Saturation) e Luminosidade
+                        *HSL:* Define Matiz (Hue), Saturação (Saturation) e Luminosidade
                         (Lightness). Útil para ajustar cores de forma intuitiva.
                     </li>
                 </ul>
@@ -651,7 +652,7 @@ p { text-align: justify; } /* Alinha o texto em ambas as margens (justificado) *
                         <ul>
                             <li>
                                 `cover`: Redimensiona a imagem para cobrir toda a área
-                                (cortando o que for necessário). **Recomendado.**
+                                (cortando o que for necessário). *Recomendado.*
                             </li>
                             <li>
                                 `contain`: Redimensiona para que a imagem seja totalmente
@@ -708,14 +709,14 @@ p { text-align: justify; } /* Alinha o texto em ambas as margens (justificado) *
                     tela).
                 </p>
                 <p>
-                    A abordagem recomendada é **Mobile First**: defina os estilos para
+                    A abordagem recomendada é *Mobile First*: defina os estilos para
                     telas pequenas por padrão e use Media Queries para ajustar para
                     telas maiores.
                 </p>
 
                 <h4>Sintaxe e Breakpoints Comuns:</h4>
                 <p>
-                    Os valores de largura (`max-width`) são chamados de **breakpoints**.
+                    Os valores de largura (`max-width`) são chamados de *breakpoints*.
                 </p>
                 <pre><code>/* ESTILOS GERAIS AQUI (MOBILE FIRST) 
   Estes valem para TODAS as telas.
@@ -748,19 +749,19 @@ nav ul {
                 </p>
                 <ul>
                     <li>
-                        **`%` (Porcentagem):** Útil para larguras relativas ao contêiner
+                        *`%` (Porcentagem):* Útil para larguras relativas ao contêiner
                         pai (ex: `width: 50%`).
                     </li>
                     <li>
-                        **`em` / `rem`:** Útil para tamanhos de fonte e espaçamentos
+                        *`em` / `rem`:* Útil para tamanhos de fonte e espaçamentos
                         relativos ao tamanho da fonte base.
                     </li>
                     <li>
-                        **`vw` (Viewport Width):** 1vw é 1% da largura da janela de
+                        *`vw` (Viewport Width):* 1vw é 1% da largura da janela de
                         visualização. Ótimo para tamanhos de fonte que escalam com a tela.
                     </li>
                     <li>
-                        **`max-width` e `min-width`:** Cruciais para evitar que elementos
+                        *`max-width` e `min-width`:* Cruciais para evitar que elementos
                         fiquem muito grandes ou muito pequenos (ex: `img { max-width:
                         100%; height: auto; }`).
                     </li>
@@ -772,12 +773,12 @@ nav ul {
                 <p>O CSS moderno simplifica a responsividade:</p>
                 <ul>
                     <li>
-                        **Flexbox (`display: flex`)**: Usado para ajustar itens em uma
+                        *Flexbox (`display: flex`)*: Usado para ajustar itens em uma
                         linha única. A propriedade `flex-wrap: wrap;` permite que os itens
                         quebrem para a próxima linha se não houver espaço.
                     </li>
                     <li>
-                        **Grid (`display: grid`)**: Ideal para layouts complexos de 2D.
+                        *Grid (`display: grid`)*: Ideal para layouts complexos de 2D.
                         Facilita a reordenação de seções inteiras com Media Queries.
                     </li>
                 </ul>

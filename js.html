@@ -33,9 +33,10 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">⬅️ Guia HTML</a></li>
-            <li><a href="css.html">⬅️ Guia CSS</a></li>
-            <li><a href="sobre.html">⬅️ Sobre</a></li>
+            <li><a href="index.html">Guia HTML</a></li>
+            <li><a href="css.html">Guia CSS</a></li>
+            <li><a href="sql.html">Guia SQL</a></li>
+            <li><a href="sobre.html">👤 Sobre Mim</a></li>
             <li class="separator">|</li>
 
             <li><a href="#dom-selecao">Seleção de Elementos</a></li>
@@ -51,10 +52,10 @@
             <p>
                 O JavaScript é a linguagem de programação da web. Ele transforma
                 páginas estáticas (HTML/CSS) em aplicações interativas. Sua principal
-                função é manipular o **DOM** (Document Object Model).
+                função é manipular o *DOM* (Document Object Model).
             </p>
             <p>
-                **DOM:** É uma interface de programação para documentos HTML e XML.
+                *DOM:* É uma interface de programação para documentos HTML e XML.
                 Ele representa a estrutura de um documento como uma árvore de objetos,
                 permitindo que programas (como o JS) mudem a estrutura, o estilo e o
                 conteúdo.
@@ -97,7 +98,7 @@ const meuBotao = document.getElementById('botao'); </code></pre>
                 </p>
                 <ul>
                     <li>
-                        `document.querySelector('seletor')`: Retorna o **primeiro**
+                        `document.querySelector('seletor')`: Retorna o *primeiro*
                         elemento que corresponde ao seletor CSS fornecido.
                         <pre><code>// Seleciona o primeiro &lt;h1&gt;
 const titulo = document.querySelector('h1');
@@ -106,8 +107,8 @@ const titulo = document.querySelector('h1');
 const btnBusca = document.querySelector('header .search-form button');</code></pre>
                     </li>
                     <li>
-                        `document.querySelectorAll('seletor')`: Retorna uma **NodeList**
-                        (lista estática) de **todos** os elementos que correspondem ao
+                        `document.querySelectorAll('seletor')`: Retorna uma *NodeList*
+                        (lista estática) de *todos* os elementos que correspondem ao
                         seletor.
                         <pre><code>// Seleciona todos os parágrafos dentro de uma seção
 const paragrafos = document.querySelectorAll('#minha-secao p');</code></pre>
@@ -133,13 +134,13 @@ const paragrafos = document.querySelectorAll('#minha-secao p');</code></pre>
                 <p>Controlam o texto e o HTML dentro de um elemento.</p>
                 <ul>
                     <li>
-                        `textContent`: Define ou retorna **somente o texto** contido no
+                        `textContent`: Define ou retorna *somente o texto* contido no
                         elemento (ignora qualquer tag HTML).
                         <pre><code>// Muda o texto dentro do &lt;p&gt;
 document.querySelector('p').textContent = 'O novo texto do parágrafo.';</code></pre>
                     </li>
                     <li>
-                        `innerHTML`: Define ou retorna o **conteúdo HTML** completo dentro
+                        `innerHTML`: Define ou retorna o *conteúdo HTML* completo dentro
                         do elemento (inclui tags).
                         <pre><code>// Adiciona HTML (texto em negrito) dentro do &lt;div&gt;
 document.getElementById('container').innerHTML = 'Aqui está um &lt;strong&gt;texto importante&lt;/strong&gt;.';</code></pre>
@@ -161,7 +162,7 @@ const inputTexto = document.getElementById('nome').value;</code></pre>
                     JS (aplicando estilos inline).
                 </p>
                 <p>
-                    ⚠ **Melhor Prática:** É sempre preferível mudar classes CSS (veja
+                    ⚠ *Melhor Prática:* É sempre preferível mudar classes CSS (veja
                     abaixo) do que usar `.style`.
                 </p>
                 <pre><code>const titulo = document.querySelector('h1');
@@ -252,15 +253,15 @@ imagem.setAttribute('alt', 'Descrição da nova imagem'); </code></pre>
                 <p>Onde:</p>
                 <ul>
                     <li>
-                        **`elemento`**: O elemento DOM que detectará a ação (ex: um botão,
+                        *`elemento`*: O elemento DOM que detectará a ação (ex: um botão,
                         a página, o corpo).
                     </li>
                     <li>
-                        **`evento`**: Uma string que especifica o tipo de evento (ex:
+                        *`evento`*: Uma string que especifica o tipo de evento (ex:
                         'click', 'mouseover', 'submit').
                     </li>
                     <li>
-                        **`funcaoParaExecutar`**: A função JavaScript que será chamada
+                        *`funcaoParaExecutar`*: A função JavaScript que será chamada
                         quando o evento ocorrer.
                     </li>
                 </ul>

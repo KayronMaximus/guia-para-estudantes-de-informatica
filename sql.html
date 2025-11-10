@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia SQL para Iniciantes</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+        const savedTheme = localStorage.getItem('themePreference');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Guia SQL Para Burros</h1>
+        <p>Aprenda a consultar, inserir e manipular dados em Bancos de Dados.</p>
+
+        <form action="https://www.google.com/search" method="get" target="_blank" class="search-form">
+            <label for="search-box" class="sr-only">Pesquisar Comandos SQL</label>
+            <input type="search" id="search-box" name="q" placeholder="Pesquisar SELECT, INSERT, JOIN..." required>
+            <input type="hidden" name="as_q" value="SQL para iniciantes SELECT INSERT JOIN" />
+            <button type="submit">🔍 Buscar</button>
+        </form>
+
+        <button id="darkModeToggle">Mudar Tema</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Guia HTML</a></li>
+            <li><a href="css.html">Guia CSS</a></li>
+            <li><a href="js.html">Guia JavaScript</a></li>
+            <li><a href="sobre.html">👤 Sobre Mim</a></li>
+            <li class="separator">|</li>
+
+            <li><a href="#introducao">O que é SQL?</a></li>
+            <li><a href="#select">SELECT (Pegar Dados)</a></li>
+            <li><a href="#insert-update">INSERT & UPDATE (Mudar Dados)</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="introducao" class="tag-explicacao">
+            <h2>1. 🎯 O Básico: O que é SQL?</h2>
+            <p>O *SQL* (Structured Query Language) é a linguagem usada para *falar com Bancos de Dados* (BDs). Pense
+                nela como a linguagem universal para gerenciar dados organizados em *Tabelas*.</p>
+
+            <article>
+                <h3>Analogia Simples: O SQL é um Garçom</h3>
+                <p>Imagine o Banco de Dados como um enorme *arquivo de restaurante*. Você não pode ir direto ao arquivo.
+                </p>
+                <ul>
+                    <li>Você usa o *SQL* (o garçom) para fazer um *Pedido* (uma *Query*).</li>
+                    <li>O SQL traz os dados que você pediu ou faz a mudança que você ordenou (ex: adicionar um novo
+                        cliente).</li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Estrutura Essencial: Tabelas (Planilhas)</h3>
+                <p>Os dados são guardados em *Tabelas*, que se parecem muito com planilhas de Excel:</p>
+                <ul>
+                    <li>*Colunas (Campos):* O nome da informação (ex: Nome, Email, Preço).</li>
+                    <li>*Linhas (Registros):* Os dados reais (ex: John Kayron, jk@email.com).</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="dml" class="tag-explicacao">
+            <h2>2. DML: Manipulação de Dados (O CRUD)</h2>
+            <p>DML (Data Manipulation Language) são os comandos que movem e mudam os dados *dentro* das tabelas. São os
+                comandos do dia a dia (o famoso *CRUD*: Criar, Ler, Atualizar, Deletar).</p>
+
+            <article>
+                <h3>1. SELECT (READ) - O Comando Rei (Ler)</h3>
+                <p>Lê (consulta) os dados das tabelas. Use a cláusula *WHERE* para filtrar.</p>
+                <pre><code>SELECT coluna1, coluna2
+FROM NomeDaTabela
+WHERE coluna1 = 'Filtro';</code></pre>
+                <p class="nota">Simplificando: *PEGUE* estas colunas *DESTA TABELA* onde a condição é verdadeira.</p>
+
+                <h3>2. INSERT INTO (CREATE) - Adicionar Novo</h3>
+                <p>Adiciona uma nova linha (registro) à tabela.</p>
+                <pre><code>INSERT INTO Tabela (coluna1, coluna2)
+VALUES (valor1, valor2);</code></pre>
+
+                <h3>3. UPDATE (UPDATE) - Modificar Existente</h3>
+                <p>Modifica valores de colunas. *SEMPRE USE WHERE!*</p>
+                <pre><code>UPDATE Tabela
+SET coluna = novo_valor
+WHERE condicao;</code></pre>
+
+                <h3>4. DELETE FROM (DELETE) - Remover Linha</h3>
+                <p>Remove linhas inteiras. *CUIDADO!*</p>
+                <pre><code>DELETE FROM Tabela
+WHERE id = 10;</code></pre>
+            </article>
+        </section>
+
+        <section id="ddl" class="tag-explicacao">
+            <h2>3. DDL: Definição de Dados (Estrutura)</h2>
+            <p>DDL (Data Definition Language) são os comandos que trabalham na *estrutura* das tabelas (o esqueleto do
+                banco de dados).</p>
+
+            <article>
+                <table class="tabela-comandos">
+                    <thead>
+                        <tr>
+                            <th>Comando</th>
+                            <th>Função Simples</th>
+                            <th>Exemplo (Comando)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>*CREATE*</td>
+                            <td>Cria objetos (tabela, banco de dados).</td>
+                            <td><code>CREATE TABLE Produtos (...)</code></td>
+                        </tr>
+                        <tr>
+                            <td>*ALTER*</td>
+                            <td>Modifica a estrutura de um objeto.</td>
+                            <td><code>ALTER TABLE Produtos ADD COLUMN Preco INT;</code></td>
+                        </tr>
+                        <tr>
+                            <td>*DROP*</td>
+                            <td>Apaga o objeto *inteiro* (tabela e dados).</td>
+                            <td><code>DROP TABLE Produtos;</code></td>
+                        </tr>
+                        <tr>
+                            <td>*TRUNCATE*</td>
+                            <td>Esvazia *todos* os dados, mantendo a tabela vazia.</td>
+                            <td><code>TRUNCATE TABLE Produtos;</code></td>
+                        </tr>
+                        <tr>
+                            <td>*RENAME*</td>
+                            <td>Muda o nome de um objeto.</td>
+                            <td><code>RENAME TABLE Antigo TO Novo;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section id="dcl-tcl" class="tag-explicacao">
+            <h2>4. DCL e TCL: Controle e Transação</h2>
+            <p>Estes comandos garantem a *segurança* (quem pode fazer o quê) e a *integridade* dos dados (se uma
+                operação falhar, os dados não quebram).</p>
+
+            <article>
+                <h3>DCL (Controle de Dados - Permissões)</h3>
+                <ul>
+                    <li>*GRANT:* *DÁ* permissão a um usuário (Ex: `GRANT SELECT ON Tabela TO usuario1;`).</li>
+                    <li>*REVOKE:* *TIRA* a permissão de um usuário.</li>
+                </ul>
+
+                <h3>TCL (Controle de Transação - Salvar/Desfazer)</h3>
+                <p>Gerencia conjuntos de operações como uma única unidade (Transação).</p>
+                <ul>
+                    <li>*COMMIT:* Torna as alterações *permanentes* no banco de dados.</li>
+                    <li>*ROLLBACK:* *Desfaz* as alterações desde o último `COMMIT`.</li>
+                    <li>*SAVEPOINT:* Define um ponto para onde você pode voltar com `ROLLBACK`.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="clausulas" class="tag-explicacao">
+            <h2>5. Cláusulas e Operadores Essenciais</h2>
+            <p>São as palavras-chave que acompanham os comandos (principalmente o SELECT) para refinar e modificar as
+                operações.</p>
+
+            <article>
+                <table class="tabela-comandos">
+                    <thead>
+                        <tr>
+                            <th>Cláusula/Operador</th>
+                            <th>Uso</th>
+                            <th>Exemplo Rápido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>*FROM*</td>
+                            <td>Indica a tabela de origem (sempre com SELECT).</td>
+                            <td><code>SELECT * FROM Clientes</code></td>
+                        </tr>
+                        <tr>
+                            <td>*WHERE*</td>
+                            <td>Filtra linhas com base em uma condição.</td>
+                            <td><code>... WHERE idade > 18</code></td>
+                        </tr>
+                        <tr>
+                            <td>*ORDER BY*</td>
+                            <td>Ordena o resultado final.</td>
+                            <td><code>... ORDER BY nome DESC</code></td>
+                        </tr>
+                        <tr>
+                            <td>*GROUP BY*</td>
+                            <td>Agrupa linhas com o mesmo valor para cálculos (média, soma).</td>
+                            <td><code>... GROUP BY cidade</code></td>
+                        </tr>
+                        <tr>
+                            <td>*JOIN*</td>
+                            <td>Combina dados de duas tabelas diferentes.</td>
+                            <td><code>SELECT * FROM TabelaA JOIN TabelaB...</code></td>
+                        </tr>
+                        <tr>
+                            <td>*AS*</td>
+                            <td>Cria um apelido para colunas ou tabelas.</td>
+                            <td><code>SELECT nome AS N FROM Clientes</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+
+    <button id="btnTopo" onclick="scrollToTop()" title="Voltar ao Topo">
+        ⬆️ Topo da Página
+    </button>
+
+    <footer>
+        <p>© 2025 - Guia SQL - John Kayron</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
